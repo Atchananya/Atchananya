@@ -2,388 +2,400 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Atchananya Pitasaeng – Portfolio</title>
-    <meta name="description" content="Atchananya Pitasaeng – Senior Digital Business and Information Systems student. Looking for a Data Analyst or Business/System Analyst Internship.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atchananya Pitasaeng | Portfolio</title>
+    <meta name="description" content="Senior Digital Business and Information Systems student focused on Data Analytics & Business Analysis.">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..14,400;9..14,600;9..14,600&family=Sarabun:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           DESIGN TOKENS – "LEDGER" SYSTEM (Premium Academic & Minimalist)
+           PREMIUM MINIMALIST PINK THEME CONFIGURATION
            ========================================================================== */
-        :root{
-            --paper:        #F2F0F8;
-            --paper-2:      #FBFAFC;
-            --paper-3:      #E8E4F3;
-            --ink:          #1D1B2E;
-            --ink-soft:     #55516E;
-            --ink-dim:      #8783A0;
-            --line:         rgba(29,27,46,0.10);
-            --line-strong:  rgba(29,27,46,0.20);
-            --violet:       #5B4FE3;
-            --violet-deep:  #3E33B0;
-            --blue:         #3E6DF0;
-            --gold:         #B8874A;
-            --gold-soft:    #E8CFA0;
+        :root {
+            --bg-canvas:     #FFF8FA;   /* สีพื้นหลังชมพูระเรื่อแบบหรูหรา */
+            --bg-card:       #FFFFFF;   /* สีการ์ดสีขาวบริสุทธิ์เพื่อความคมชัด */
+            --rose-primary:  #E07A93;   /* สีชมพูโรสโกลด์หลัก */
+            --rose-dark:     #A64B62;   /* สีชมพูเข้มสำหรับข้อความสำคัญ */
+            --rose-light:    #FFF0F4;   /* สีชมพูอ่อนพาสเทลสำหรับพื้นหลังย่อย */
+            --ink-main:      #2D2527;   /* สีข้อความหลักเทาเข้มเกือบดำ */
+            --ink-muted:     #6E6164;   /* สีข้อความรองเทาละมุน */
+            --border-color:  #F2E2E6;   /* สีเส้นขอบชมพูอ่อนมากๆ */
             
-            --font-serif:   'Fraunces', Georgia, serif;
-            --font-sans:    'Sarabun', -apple-system, sans-serif;
-            --font-mono:    'IBM Plex Mono', monospace;
+            --font-display:  'Space Grotesk', -apple-system, sans-serif;
+            --font-body:     'Plus Jakarta Sans', 'Sarabun', sans-serif;
         }
 
-        *{ box-sizing: border-box; margin: 0; padding: 0; }
-        html{ background-color: var(--paper); color: var(--ink); font-family: var(--font-sans); font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-        body{ min-height: 100vh; display: flex; flex-direction: column; padding: 2rem 1rem; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-canvas); color: var(--ink-main); font-family: var(--font-body); -webkit-font-smoothing: antialiased; line-height: 1.6; }
 
-        .ledger-container{ max-width: 920px; width: 100%; margin: 0 auto; background: var(--paper-2); border: 1px solid var(--line-strong); box-shadow: 0 20px 50px rgba(29,27,46,0.08); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-
-        /* ==========================================================================
-           HEADER SECTION
-           ========================================================================== */
-        header{ padding: 4.5rem 4rem 3.5rem 4rem; border-bottom: 1px solid var(--line-strong); background: linear-gradient(180deg, #fff 0%, var(--paper-2) 100%); position: relative; }
-        header::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--violet), var(--blue), var(--gold)); }
+        a { color: inherit; text-decoration: none; }
         
-        .header-grid{ display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; }
-        .header-main h1{ font-family: var(--font-serif); font-size: 3rem; font-weight: 600; color: var(--ink); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
-        .header-main .subtitle{ font-family: var(--font-mono); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--violet); font-weight: 500; margin-bottom: 1.5rem; }
+        /* CONTAINER TYPE FROM AKSHAY'S SITE */
+        .global-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* ==========================================================================
+           TOP BADGE & NAV BAR
+           ========================================================================== */
+        .status-badge-bar { background-color: var(--rose-light); border-bottom: 1px solid var(--border-color); padding: 0.5rem 0; text-align: center; }
+        .status-msg { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 500; color: var(--rose-dark); }
+        .pulse-dot { width: 8px; height: 8px; background-color: #4CAF50; border-radius: 50%; display: inline-block; box-shadow: 0 0 0 rgba(76, 175, 80, 0.4); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); } 70% { box-shadow: 0 0 0 6px rgba(76, 175, 80, 0); } 100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); } }
+
+        nav { background: rgba(255, 248, 250, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-color); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .nav-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--rose-dark); letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.9rem; font-weight: 500; color: var(--ink-muted); }
+        .nav-links a:hover { color: var(--rose-primary); }
+
+        /* ==========================================================================
+           HERO SECTION WITH COUNTER COUNTS
+           ========================================================================== */
+        .hero-section { padding: 5rem 0 4rem 0; }
+        .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
+        .hero-info h1 { font-family: var(--font-display); font-size: 3.5rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+        .hero-info h1 span { color: var(--rose-primary); }
+        .hero-title-tag { font-size: 1.25rem; color: var(--ink-muted); font-weight: 400; margin-bottom: 1.5rem; }
+        .hero-bio { color: var(--ink-muted); font-size: 1.05rem; max-width: 680px; margin-bottom: 2.5rem; text-align: justify; }
         
-        .profile-frame { width: 130px; height: 130px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line-strong); background: var(--paper); box-shadow: 0 8px 16px rgba(29,27,46,0.05); }
-        .profile-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-cta-group { display: flex; gap: 1rem; }
+        .btn-primary { background-color: var(--rose-primary); color: white; padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 500; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(224, 122, 147, 0.25); transition: all 0.2s; }
+        .btn-primary:hover { background-color: var(--rose-dark); transform: translateY(-1px); }
+        .btn-secondary { border: 1px solid var(--border-color); background: var(--bg-card); color: var(--ink-main); padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 500; font-size: 0.95rem; transition: all 0.2s; }
+        .btn-secondary:hover { background: var(--rose-light); border-color: var(--rose-primary); }
 
-        .meta-list{ display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 1.5rem; }
-        .meta-item{ display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--ink-soft); }
-        .meta-item i{ color: var(--ink-dim); width: 16px; font-size: 0.95rem; text-align: center; }
+        .profile-img-container { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 30px rgba(224, 122, 147, 0.15); }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* COUNTER BOXES */
+        .counter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; }
+        .counter-item { text-align: center; }
+        .counter-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; color: var(--rose-dark); margin-bottom: 0.25rem; }
+        .counter-lbl { font-size: 0.85rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
 
         /* ==========================================================================
-           NAV BAR & TABS
+           SECTION CORE LAYOUT
            ========================================================================== */
-        nav{ display: flex; background: var(--paper); border-bottom: 1px solid var(--line); padding: 0 2rem; overflow-x: auto; sticky: top; }
-        nav a{ padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
-        nav a:hover{ color: var(--violet); background: rgba(91,79,227,0.04); }
-        nav a.active{ color: var(--ink); font-weight: 500; border-bottom-color: var(--ink); }
+        section { padding: 5rem 0; border-top: 1px solid var(--border-color); }
+        .section-header { margin-bottom: 3rem; }
+        .section-tag { font-family: var(--font-display); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rose-primary); font-weight: 600; margin-bottom: 0.5rem; display: block; }
+        .section-title { font-family: var(--font-display); font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; }
 
-        /* ==========================================================================
-           MAIN CONTENT SYSTEM
-           ========================================================================== */
-        main{ padding: 4rem; display: flex; flex-direction: column; gap: 4rem; }
-        section{ scroll-margin-top: 5rem; }
+        /* EXPERTISE CARDS LAYOUT */
+        .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .expertise-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 2.5rem 2rem; border-radius: 10px; transition: all 0.3s; }
+        .expertise-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(224, 122, 147, 0.06); border-color: var(--rose-primary); }
+        .exp-icon { font-size: 1.75rem; color: var(--rose-primary); margin-bottom: 1.5rem; }
+        .expertise-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
+        .expertise-card p { color: var(--ink-muted); font-size: 0.95rem; }
+
+        /* SKILLS GRID SYSTEM */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .skill-group-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.75rem; border-radius: 8px; }
+        .skill-group-box h4 { font-family: var(--font-display); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--rose-dark); margin-bottom: 1.25rem; border-left: 3px solid var(--rose-primary); padding-left: 0.7rem; }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag { background: var(--bg-canvas); border: 1px solid var(--border-color); color: var(--ink-main); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.15s; }
+        .skill-tag:hover { background: var(--rose-primary); color: white; border-color: var(--rose-primary); }
+
+        /* PROJECTS & EXPERIENCE LIST LAYOUT */
+        .project-list { display: flex; flex-direction: column; gap: 2rem; }
+        .project-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 10px; display: grid; grid-template-columns: 1fr 250px; gap: 3rem; }
+        .project-meta h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .project-inst { font-size: 0.95rem; color: var(--rose-dark); font-weight: 500; margin-bottom: 1rem; }
+        .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .project-bullets li { font-size: 0.95rem; color: var(--ink-muted); position: relative; padding-left: 1.25rem; }
+        .project-bullets li::before { content: "•"; position: absolute; left: 0; color: var(--rose-primary); font-size: 1.2rem; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .project-date-side { font-family: var(--font-display); font-size: 0.95rem; color: var(--ink-muted); text-align: right; font-weight: 500; }
         
-        .section-title{ font-family: var(--font-serif); font-size: 1.75rem; font-weight: 600; color: var(--ink); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
-        .section-title::after{ content: ''; flex: 1; height: 1px; background: var(--line); margin-left: 0.5rem; }
-        
-        .bio-text{ font-size: 1.05rem; line-height: 1.75; color: var(--ink-soft); text-align: justify; }
+        /* CERTIFICATIONS ROW */
+        .cert-rows-container { display: flex; flex-direction: column; gap: 1rem; }
+        .cert-row { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; }
+        .cert-row:hover { border-color: var(--rose-primary); }
+        .cert-left h4 { font-size: 1.05rem; font-weight: 600; }
+        .cert-left p { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.2rem; }
+        .cert-time { font-family: var(--font-display); font-size: 0.9rem; color: var(--rose-dark); font-weight: 500; }
 
         /* ==========================================================================
-           SKILLS GRID SYSTEM (แบบแทมเพลตใหม่)
+           FOOTER SECTION
            ========================================================================== */
-        .skills-matrix{ display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
-        .matrix-box{ background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.75rem; transition: transform 0.2s, box-shadow 0.2s; }
-        .matrix-box:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(29,27,46,0.04); border-color: var(--line-strong); }
-        .matrix-box h3{ font-family: var(--font-mono); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--violet); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
-        
-        .tag-cloud{ display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .skill-tag{ background: var(--paper); border: 1px solid var(--line); color: var(--ink); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.9rem; font-weight: 400; transition: all 0.15s; }
-        .skill-tag:hover{ background: var(--ink); color: #fff; border-color: var(--ink); }
+        footer { background: var(--bg-card); border-top: 1px solid var(--border-color); padding: 3rem 0; font-size: 0.9rem; color: var(--ink-muted); }
+        .footer-flex { display: flex; justify-content: space-between; align-items: center; }
+        .footer-socials { display: flex; gap: 1.5rem; font-size: 1.2rem; }
+        .footer-socials a:hover { color: var(--rose-primary); }
 
         /* ==========================================================================
-           TIMELINE / LEDGER LIST SYSTEM
+           MOBILE RESPONSIVE
            ========================================================================== */
-        .ledger-list{ display: flex; flex-direction: column; gap: 2rem; }
-        .ledger-row{ display: grid; grid-template-columns: 180px 1fr; gap: 2rem; align-items: start; }
-        .ledger-time{ font-family: var(--font-mono); font-size: 0.9rem; color: var(--ink-dim); padding-top: 0.2rem; }
-        
-        .ledger-detail h4{ font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
-        .ledger-detail .institution{ font-size: 0.95rem; color: var(--violet); font-weight: 500; margin-bottom: 0.75rem; }
-        .ledger-detail .score{ font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0.5rem; background: var(--paper); display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; }
-        
-        .ledger-detail ul{ list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .ledger-detail li{ font-size: 0.95rem; color: var(--ink-soft); line-height: 1.5; position: relative; padding-left: 1.25rem; }
-        .ledger-detail li::before{ content: '→'; position: absolute; left: 0; color: var(--violet); }
-
-        /* ==========================================================================
-           CERTIFICATIONS CARDS
-           ========================================================================== */
-        .cert-matrix { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-        .cert-row { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid var(--line); border-radius: 6px; transition: all 0.2s; }
-        .cert-row:hover { border-color: var(--violet); background: var(--paper-2); }
-        .cert-info h4 { font-size: 1rem; font-weight: 600; color: var(--ink); }
-        .cert-info p { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.25rem; }
-        .cert-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); white-space: nowrap; margin-left: 1rem; }
-
-        /* ==========================================================================
-           FOOTER
-           ========================================================================== */
-        footer{ border-top: 1px solid var(--line); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--ink-dim); background: var(--paper); }
-        footer a{ color: var(--ink-soft); text-decoration: none; }
-        footer a:hover{ color: var(--violet); }
-
-        /* ==========================================================================
-           RESPONSIVE DESIGN
-           ========================================================================== */
-        @media (max-width: 768px){
-            body{ padding: 0; }
-            .ledger-container{ border-radius: 0; border: none; }
-            header{ padding: 3rem 2rem 2rem 2rem; }
-            .header-grid{ grid-template-columns: 1fr; gap: 1.5rem; text-align: center; justify-items: center; }
-            .header-main h1{ font-size: 2.25rem; }
-            .meta-list{ grid-template-columns: 1fr; justify-items: center; text-align: center; }
-            nav{ padding: 0 1rem; }
-            main{ padding: 2.5rem 1.5rem; gap: 3rem; }
-            .ledger-row{ grid-template-columns: 1fr; gap: 0.5rem; }
-            .ledger-time{ font-weight: 500; color: var(--violet); }
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; justify-items: center; }
+            .hero-bio { text-align: center; }
+            .hero-cta-group { justify-content: center; }
+            .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .project-card { grid-template-columns: 1fr; gap: 1rem; }
+            .project-date-side { text-align: left; order: -1; color: var(--rose-primary); }
             .cert-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-            .cert-date { margin-left: 0; }
-            footer{ padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+            .nav-links { display: none; }
+            .footer-flex { flex-direction: column; gap: 1.5rem; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ledger-container">
-        
-        <!-- HEADER -->
-        <header>
-            <div class="header-grid">
-                <div class="header-main">
-                    <h1>ATCHANANYA PITASAENG</h1>
-                    <div class="subtitle">Senior Digital Business and Information Systems Student</div>
-                    
-                    <div class="meta-list">
-                        <div class="meta-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Maha Sarakham, 44150, Thailand</span>
-                        </div>
-                        <div class="meta-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>(+66) 98-141-0093</span>
-                        </div>
-                        <div class="meta-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>atchananyap@gmail.com</span>
-                        </div>
+    <!-- TOP AVAILABILITY BADGE -->
+    <div class="status-badge-bar">
+        <div class="status-msg">
+            <span class="pulse-dot"></span>
+            Available for Work & Internship Opportunities (Dec 2026 – Mar 2027)
+        </div>
+    </div>
+
+    <!-- STICKY NAVIGATION -->
+    <nav>
+        <div class="global-wrapper nav-container">
+            <div class="nav-logo">AP.PORTFOLIO</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO PROFILE SECTION -->
+    <header class="hero-section">
+        <div class="global-wrapper">
+            <div class="hero-grid">
+                <div class="hero-info">
+                    <h1>Hi, I'm <span>Atchananya</span>.</h1>
+                    <div class="hero-title-tag">Data Analyst | Business & Systems Analyst | DBIS Student</div>
+                    <p class="hero-bio">
+                        นิสิตชั้นปีที่ 4 สาขาธุรกิจดิจิทัลและระบบสารสนเทศ (Digital Business and Information Systems) มหาวิทยาลัยมหาสารคาม มีพื้นฐานที่แข็งแกร่งด้านการวิเคราะห์ข้อมูล (Data Analytics), การจัดการฐานข้อมูลผ่าน SQL และการทำ Data Visualization มีความมุ่งมั่นในการเรียนรู้พร้อมประยุกต์ใช้ทักษะเชิงเทคนิคและกระบวนการคิดเชิงวิเคราะห์เพื่อแก้ไขปัญหาทางธุรกิจจริง
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="mailto:atchananyap@gmail.com" class="btn-primary">Hire Me</a>
+                        <a href="#projects" class="btn-secondary">View Work</a>
                     </div>
                 </div>
-                
-                <!-- PHOTO FRAME -->
-                <div class="profile-frame">
+                <div class="profile-img-container">
                     <img src="profile.jpg" alt="Atchananya Pitasaeng">
                 </div>
             </div>
-        </header>
 
-        <!-- NAVIGATION TABS -->
-        <nav>
-            <a href="#about" class="active">.about()</a>
-            <a href="#skills">.skills()</a>
-            <a href="#experience">.experience()</a>
-            <a href="#education">.education()</a>
-            <a href="#certifications">.certifications()</a>
-        </nav>
+            <!-- STATS COUNTER BOXES -->
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-num">3.36</div>
+                    <div class="counter-lbl">Current GPAX</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-num">8.8K+</div>
+                    <div class="counter-lbl">Records Analyzed</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-num">5+</div>
+                    <div class="counter-lbl">Certifications</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-num">96.7%</div>
+                    <div class="counter-lbl">ML Model Accuracy</div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <!-- MAIN CONTENT -->
-        <main>
-            
-            <!-- ABOUT ME -->
-            <section id="about">
-                <h2 class="section-title">About Me</h2>
-                <p class="bio-text">
-                    นิสิตชั้นปีที่ 4 สาขาธุรกิจดิจิทัลและระบบสารสนเทศ (Digital Business and Information Systems) มีพื้นฐานที่แข็งแกร่งด้านการวิเคราะห์ข้อมูล (Data Analysis), การจัดการฐานข้อมูลด้วย SQL และการทำ Data Visualization ด้วย Power BI มีประสบการณ์จริงในการจัดการข้อมูลเชิงปฏิบัติการรวมถึงการออกแบบขั้นตอนการทำงานของระบบ (System Workflows) มีความกระตือรือร้นและกำลังมองหาโอกาสในการฝึกงานในตำแหน่ง <strong>Data Analyst</strong> หรือ <strong>Business/System Analyst Internship</strong> ช่วงระหว่างวันที่ 1 ธันวาคม 2569 ถึง 31 มีนาคม 2570 เพื่อนำทักษะการคิดวิเคราะห์และการจัดทำเอกสารระบบไปประยุกต์ใช้ในการขับเคลื่อนธุรกิจจริง
-                </p>
-            </section>
+    <!-- MAIN BODY SECTIONS -->
+    <div class="global-wrapper">
+        
+        <!-- EXPERTISE SECTION -->
+        <section id="expertise">
+            <div class="section-header">
+                <span class="section-tag">Core Focus</span>
+                <h2 class="section-title">What I Specialize In</h2>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="exp-icon"><i class="fa-solid fa-chart-simple"></i></div>
+                    <h3>Data Analytics</h3>
+                    <p>รวบรวม ทำความสะอาด และจัดการข้อมูลจำนวนมากเพื่อหา Insight ขับเคลื่อนการตัดสินใจทางธุรกิจ โดยอ้างอิงตามโครงสร้างมาตรฐานอุตสาหกรรมอย่าง CRISP-DM</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="exp-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                    <h3>Business & Workflows</h3>
+                    <p>ออกแบบโครงสร้างระบบ วางขั้นตอนกระบวนการทำงาน (Workflow Automation) และการจัดทำโครงร่างหน้าจอระบบ (Wireframe/Prototype) เพื่อให้ตอบโจทย์ผู้ใช้งาน</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="exp-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>Database Systems</h3>
+                    <p>ออกแบบ ออกคำสั่ง และจัดการระบบฐานข้อมูลเชิงสัมพันธ์ผ่านโครงสร้างภาษา SQL เพื่อควบคุมความถูกต้อง ปลอดภัย และดึงข้อมูลไปใช้งานได้อย่างถูกต้องแม่นยำ</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- KEY SKILLS MATRIX -->
-            <section id="skills">
-                <h2 class="section-title">Key Skills</h2>
-                <div class="skills-matrix">
-                    
-                    <div class="matrix-box">
-                        <h3><i class="fa-solid fa-chart-pie"></i> Data Analytics</h3>
-                        <div class="tag-cloud">
+        <!-- TECHNICAL SKILLS MATRIX -->
+        <section id="skills">
+            <div class="section-header">
+                <span class="section-tag">Skills</span>
+                <h2 class="section-title">Technologies I Use</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group-box">
+                    <h4>Programming</h4>
+                    <div class="tag-cloud">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL (Oracle)</span>
+                        <span class="skill-tag">R Language</span>
+                    </div>
+                </div>
+                <div class="skill-group-box">
+                    <h4>Analytics & BI</h4>
+                    <div class="tag-cloud">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">RapidMiner</span>
+                        <span class="skill-tag">Altair AI Studio</span>
+                    </div>
+                </div>
+                <div class="skill-group-box">
+                    <h4>Design & Tools</h4>
+                    <div class="tag-cloud">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">n8n Automation</span>
+                        <span class="skill-tag">Git / GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-group-box">
+                    <h4>Core Concept</h4>
+                    <div class="tag-cloud">
+                        <span class="skill-tag">Data Cleansing</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">System Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS / EXPERIENCES -->
+        <section id="projects">
+            <div class="section-header">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Real-World Projects & Experience</h2>
+            </div>
+            <div class="project-list">
+                
+                <!-- PROJECT 1 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <h3>Electricity Consumption Forecasting using Machine Learning</h3>
+                        <div class="project-inst">Machine Learning & Data Analytics Project</div>
+                        <ul class="project-bullets">
+                            <li>จัดเตรียม ทำความสะอาด และแปลงรูปแบบข้อมูลสถิติพลังงานไฟฟ้าระดับประเทศจำนวนกว่า 8,806 เรคคอร์ด อ้างอิงกระบวนการทำงานตามกรอบ CRISP-DM</li>
+                            <li>พัฒนาและทดสอบประสิทธิภาพโมเดลวิเคราะห์ข้อมูลพยากรณ์ ได้แก่ Random Forest, Neural Network และ Linear Regression</li>
+                            <li>โมเดล Random Forest ประสบความสำเร็จในการทำงานด้วยความแม่นยำพยากรณ์ (R²) สูงถึง 96.70% ผ่านเกณฑ์การประเมินแบบ Cross-Validation</li>
+                        </ul>
+                        <div class="project-tags">
                             <span class="skill-tag">Python</span>
-                            <span class="skill-tag">SQL (Oracle PL/SQL)</span>
-                            <span class="skill-tag">Power BI</span>
-                            <span class="skill-tag">RapidMiner</span>
-                            <span class="skill-tag">R Language</span>
+                            <span class="skill-tag">Altair AI Studio</span>
+                            <span class="skill-tag">Machine Learning</span>
                         </div>
                     </div>
-
-                    <div class="matrix-box">
-                        <h3><i class="fa-solid fa-folder-open"></i> Business & Systems</h3>
-                        <div class="tag-cloud">
-                            <span class="skill-tag">Figma (Wireframe/Prototype)</span>
-                            <span class="skill-tag">n8n (Workflow Automation)</span>
-                            <span class="skill-tag">System Documentation</span>
-                            <span class="skill-tag">Microsoft Office</span>
-                        </div>
-                    </div>
-
-                    <div class="matrix-box">
-                        <h3><i class="fa-solid fa-lightbulb"></i> Soft Skills</h3>
-                        <div class="tag-cloud">
-                            <span class="skill-tag">Critical Thinking</span>
-                            <span class="skill-tag">Stakeholder Communication</span>
-                            <span class="skill-tag">Complex Problem Solving</span>
-                            <span class="skill-tag">Cross-functional Collaboration</span>
-                        </div>
-                    </div>
-
-                    <div class="matrix-box">
-                        <h3><i class="fa-solid fa-language"></i> Languages</h3>
-                        <div class="tag-cloud">
-                            <span class="skill-tag">Thai (Native)</span>
-                            <span class="skill-tag">English (Professional Basic)</span>
-                        </div>
-                    </div>
-
+                    <div class="project-date-side">Sep 2025</div>
                 </div>
-            </section>
 
-            <!-- WORK EXPERIENCES -->
-            <section id="experience">
-                <h2 class="section-title">Work Experiences</h2>
-                <div class="ledger-list">
-                    
-                    <div class="ledger-row">
-                        <div class="ledger-time">Sep 2025</div>
-                        <div class="ledger-detail">
-                            <h4>Electricity Consumption Forecasting using ML</h4>
-                            <div class="institution">Machine Learning & Data Analytics Project</div>
-                            <ul>
-                                <li><strong>Data Prep:</strong> จัดเตรียมและทำความสะอาดข้อมูลสถิติพลังงานระดับประเทศจำนวนกว่า 8,806 เรคคอร์ด ผ่าน Altair AI Studio โดยอ้างอิงตามกรอบการทำงาน CRISP-DM</li>
-                                <li><strong>Features:</strong> ทำการวิเคราะห์และโมเดลตัวแปรขับเคลื่อน 9 ตัวแปร เช่น ปริมาณการผลิตไฟฟ้าในภูมิภาค, การนำเข้าพลังงานข้ามพรมแดน และปัจจัยทางฤดูกาล</li>
-                                <li><strong>Modeling:</strong> พัฒนาและปรับแต่งโมเดล Random Forest, Neural Network และ Linear Regression</li>
-                                <li><strong>Evaluation:</strong> ประสบความสำเร็จในการพยากรณ์ด้วยความแม่นยำ (R²) สูงถึง 96.70% และค่า RMSE อยู่ที่ 514.03 โดยใช้โมเดล Random Forest ผ่านการทดสอบแบบ 10-fold Cross Validation</li>
-                            </ul>
+                <!-- PROJECT 2 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <h3>Freelance Specialist & Operations Support</h3>
+                        <div class="project-inst">Dunkin' Company</div>
+                        <ul class="project-bullets">
+                            <li>จัดการและควบคุมธุรกรรมผ่านระบบขายหน้าร้าน POS รองรับการชำระเงินดิจิทัลรูปแบบต่างๆ และแคมเปญสิทธิประโยชน์ CRM ประจำแบรนด์</li>
+                            <li>บริหารและจัดระบบคำสั่งซื้อจากแพลตฟอร์มฟู้ดเดลิเวอรี่ ควบคุมความถูกต้องแม่นยำในการจัดออเดอร์และการจัดส่งทันเวลา</li>
+                            <li>ทำหน้าที่ตรวจสอบและบันทึกประวัติยอดสินค้าคงคลังประจำวันเพื่อวิเคราะห์และลดอัตราความสูญเสียของวัตถุดิบ</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="skill-tag">POS Systems</span>
+                            <span class="skill-tag">Inventory Management</span>
+                            <span class="skill-tag">Operations Analytics</span>
                         </div>
                     </div>
-
-                    <div class="ledger-row">
-                        <div class="ledger-time">Apr 2026 - Jun 2026</div>
-                        <div class="ledger-detail">
-                            <h4>Freelance Specialist</h4>
-                            <div class="institution">Dunkin' Company</div>
-                            <ul>
-                                <li>รับผิดชอบการจัดการธุรกรรมผ่านระบบ POS, การชำระเงินดิจิทัลรูปแบบต่างๆ และการบริหารจัดการแคมเปญการตลาด CRM ของแบรนด์</li>
-                                <li>บริหารจัดการออเดอร์จากแพลตฟอร์มเดลิเวอรี่ที่หลากหลายควบคู่กัน เพื่อควบคุมความถูกต้องในการจัดส่งแบบ 100% On-time Accuracy</li>
-                                <li>บันทึกและตรวจสอบข้อมูลสต็อกสินค้าคงคลังประจำวันผ่านเครื่องมือดิจิทัล เพื่อนำมาวิเคราะห์และลดอัตราการสูญเสีย (Waste ลดลง)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="ledger-row">
-                        <div class="ledger-time">Dec 2024</div>
-                        <div class="ledger-detail">
-                            <h4>Event Support & Coordinator</h4>
-                            <div class="institution">MSU Open House – Mahasarakham University</div>
-                            <ul>
-                                <li>ดูแลต้อนรับผู้เข้าชมงานและให้ข้อมูลเชิงลึกเกี่ยวกับหลักสูตรแก่กลุ่มนักเรียนนักศึกษาที่สนใจเข้าศึกษาต่อ</li>
-                                <li>นำเสนอภาพรวมของสาขาวิชาธุรกิจดิจิทัลและระบบสารสนเทศ (DBIS) รวมถึงแนวทางการประกอบอาชีพในสายงานไอทีและธุรกิจ</li>
-                                <li>ประสานงาน ตอบคำถาม และแก้ไขปัญหาเฉพาะหน้าเพื่อสนับสนุนให้กิจกรรมภายในงานดำเนินไปได้อย่างราบรื่น</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <div class="project-date-side">Apr 2026 - Jun 2026</div>
                 </div>
-            </section>
 
-            <!-- EDUCATION -->
-            <section id="education">
-                <h2 class="section-title">Education</h2>
-                <div class="ledger-list">
-                    <div class="ledger-row">
-                        <div class="ledger-time">2023 - Present</div>
-                        <div class="ledger-detail">
-                            <h4>B.A. in Digital Business and Information Systems</h4>
-                            <div class="institution">Mahasarakham Business School, Mahasarakham University (MSU)</div>
-                            <div class="score">Current GPAX: 3.36</div>
-                            <p style="font-size: 0.95rem; color: var(--ink-soft); margin-top: 0.25rem;">คาดว่าจะสำเร็จการศึกษา: พฤษภาคม 2570 (Expected Graduation: May 2027)</p>
-                        </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education">
+            <div class="section-header">
+                <span class="section-tag">Background</span>
+                <h2 class="section-title">Education History</h2>
+            </div>
+            <div class="project-list">
+                <div class="project-card" style="grid-template-columns: 1fr auto; padding: 2rem 2.5rem;">
+                    <div>
+                        <h3>Bachelor of Arts in Digital Business and Information Systems</h3>
+                        <div class="project-inst" style="margin-bottom: 0.5rem;">Mahasarakham Business School, Mahasarakham University (MSU)</div>
+                        <p style="color: var(--ink-muted); font-size: 0.95rem;">เกรดเฉลี่ยสะสมปัจจุบัน (Current GPAX): 3.36 — คาดว่าจะสำเร็จการศึกษา พฤษภาคม 2570</p>
                     </div>
+                    <div class="project-date-side">2023 - Present</div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- CERTIFICATIONS -->
-            <section id="certifications">
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" style="margin-bottom: 4rem;">
+            <div class="section-header">
+                <span class="section-tag">Credentials</span>
                 <h2 class="section-title">Certifications & Training</h2>
-                <div class="cert-matrix">
-                    
-                    <div class="cert-row">
-                        <div class="cert-info">
-                            <h4>Gemini Certified Educator</h4>
-                            <p>Google for Education • ได้รับการรับรองความเชี่ยวชาญด้าน AI Literacy, การเพิ่มประสิทธิภาพกระบวนการทำงาน (Workflow Optimization) และการสร้างสรรค์คอนเทนต์ด้วย Gemini AI</p>
-                        </div>
-                        <div class="cert-date">Feb 2026</div>
+            </div>
+            <div class="cert-rows-container">
+                <div class="cert-row">
+                    <div class="cert-left">
+                        <h4>Gemini Certified Educator</h4>
+                        <p>Google for Education • ขีดความสามารถด้าน AI Literacy และกระบวนการทำงานอัตโนมัติด้วย AI</p>
                     </div>
-
-                    <div class="cert-row">
-                        <div class="cert-info">
-                            <h4>Microsoft Power BI Training Certificate</h4>
-                            <p>สถาบันคุณวุฒิวิชาชีพ (TPQI) • ผ่านการอบรมระดับผู้เชี่ยวชาญด้านการทำ Data Visualization, Business Intelligence และการสร้าง Interactive Dashboard สำหรับธุรกิจ</p>
-                        </div>
-                        <div class="cert-date">Aug 2025</div>
-                    </div>
-
-                    <div class="cert-row">
-                        <div class="cert-info">
-                            <h4>MSU English Exit Examination (CEFR B1)</h4>
-                            <p>Mahasarakham University • ผ่านการทดสอบวัดระดับความสามารถทางภาษาอังกฤษตามมาตรฐานสากล</p>
-                        </div>
-                        <div class="cert-date">Feb 2026</div>
-                    </div>
-
-                    <div class="cert-row">
-                        <div class="cert-info">
-                            <h4>IC3 Digital Literacy Certification (GS6 Level 1)</h4>
-                            <p>Certiport (Pearson VUE) • ผ่านการรับรองมาตรฐานสากลด้านความเข้าใจดิจิทัล เทคโนโลยีพื้นฐาน และการจัดการสารสนเทศ</p>
-                        </div>
-                        <div class="cert-date">Feb 2025</div>
-                    </div>
-
-                    <div class="cert-row">
-                        <div class="cert-info">
-                            <h4>LINE Official Account (LINE OA) Strategy for Business Growth</h4>
-                            <p>MBS, Mahasarakham University • ผ่านการฝึกอบรมการบริหารความสัมพันธ์ลูกค้า (CRM), การตลาดดิจิทัล และการประยุกต์ใช้ฟีเจอร์เชิงธุรกิจบน LINE OA</p>
-                        </div>
-                        <div class="cert-date">Dec 2024</div>
-                    </div>
-
+                    <div class="cert-time">Feb 2026</div>
                 </div>
-            </section>
-
-        </main>
-
-        <!-- FOOTER -->
-        <footer>
-            <span>&copy; 2026 Atchananya Pitasaeng. All rights reserved.</span>
-            <span>Built with system design principles.</span>
-        </footer>
+                <div class="cert-row">
+                    <div class="cert-left">
+                        <h4>Microsoft Power BI Training Certificate</h4>
+                        <p>สถาบันคุณวุฒิวิชาชีพ (TPQI) • การจัดทำ Interactive Dashboard เพื่อวิเคราะห์ข้อมูลเชิงธุรกิจ</p>
+                    </div>
+                    <div class="cert-time">Aug 2025</div>
+                </div>
+                <div class="cert-row">
+                    <div class="cert-left">
+                        <h4>IC3 Digital Literacy Certification (GS6 Level 1)</h4>
+                        <p>Certiport (Pearson VUE) • การรับรองมาตรฐานสากลด้านความรู้ความเข้าใจเทคโนโลยีดิจิทัล</p>
+                    </div>
+                    <div class="cert-time">Feb 2025</div>
+                </div>
+            </div>
+        </section>
 
     </div>
 
-    <script>
-        // ระบบตรวจจับ Active Tab ขณะ Scroll
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll("nav a");
+    <!-- GLOBAL FOOTER -->
+    <footer>
+        <div class="global-wrapper footer-flex">
+            <div>
+                <p>&copy; 2026 Atchananya Pitasaeng. All rights reserved.</p>
+                <p style="font-size: 0.8rem; margin-top: 0.25rem; opacity: 0.7;">Minimalist Premium Pink Theme</p>
+            </div>
+            <div class="footer-socials">
+                <a href="mailto:atchananyap@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 120) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((a) => {
-                a.classList.remove("active");
-                if (a.getAttribute("href") === `#${current}`) {
-                    a.classList.add("active");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
