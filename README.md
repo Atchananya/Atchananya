@@ -1,16 +1,430 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atchananya Pitasaeng - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffb7b2;
+            --primary-dark: #ff9aa2;
+            --secondary: #ffdac1;
+            --bg: #fff5f5;
+            --text: #4a4a4a;
+            --text-light: #7a7a7a;
+            --white: #ffffff;
+            --accent: #e2b4bd;
+        }
 
-<!--
-**Atchananya/Atchananya** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-Here are some ideas to get you started:
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #5d4037;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #4a3728;
+        }
+
+        .header-container p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info span {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(255, 183, 178, 0.15);
+            border: 1px solid rgba(255, 183, 178, 0.2);
+        }
+
+        h2 {
+            color: #ff8b94;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px dashed #ffe5ec;
+            padding-bottom: 8px;
+        }
+
+        .summary-text {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #fff9f9;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .skill-category h3 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            color: #5a5a5a;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: var(--white);
+            border: 1px solid #ffe5ec;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #ffe5ec;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #4a4a4a;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background: #ffe5ec;
+            padding: 2px 10px;
+            border-radius: 12px;
+        }
+
+        .timeline-subtitle {
+            font-style: italic;
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item ul {
+            list-style-type: none;
+        }
+
+        .timeline-item li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-item li::before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.75rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .cert-card {
+            background: #fff9f9;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #ffe5ec;
+        }
+
+        .cert-title {
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .cert-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 600px) {
+            .timeline-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>ATCHANANYA PITASAENG</h1>
+            <p>Senior Digital Business and Information Systems Student</p>
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> Maha Sarakham, 44150</span>
+                <span><i class="fas fa-phone"></i> (+66) 981410093</span>
+                <span><i class="fas fa-envelope"></i> atchananyap@gmail.com</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- SUMMARY -->
+        <section id="summary">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p class="summary-text">
+                Senior Digital Business and Information Systems student with a solid foundation in Data Analysis, SQL, and Power BI. Experienced in managing operational data and structuring system workflows. Seeking a Data Analyst or Business/System Analyst Internship from December 1, 2026 to March 31, 2027 to apply analytical skills and documentation expertise to real-world business solutions.
+            </p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="timeline-item" style="border: none; padding-left: 0;">
+                <div class="timeline-header">
+                    <span class="timeline-title">B.A in Digital Business and Information Systems</span>
+                    <span class="timeline-date">June 2023 - Present</span>
+                </div>
+                <div class="timeline-subtitle">Mahasarakham Business School, Mahasarakham University (MSU)</div>
+                <p style="font-size: 0.95rem; margin-top: 5px;">
+                    <strong>Current GPAX:</strong> 3.36 | <strong>Expected Graduation:</strong> May 2027
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2><i class="fas fa-star"></i> Key Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL (Oracle PL/SQL)</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">RapidMiner</span>
+                        <span class="tag">R</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Business & Documentation</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Figma (Wireframe/Prototype)</span>
+                        <span class="tag">Microsoft Office</span>
+                        <span class="tag">n8n (Automation Workflow)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Critical Thinking</span>
+                        <span class="tag">Stakeholder Communication</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Team Collaboration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Thai (Native)</span>
+                        <span class="tag">English (Basic)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCES -->
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Work Experiences</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">FREELANCE</span>
+                    <span class="timeline-date">Apr 2026 - Jun 2026</span>
+                </div>
+                <div class="timeline-subtitle">Dunkin' Company</div>
+                <ul>
+                    <li>Handled POS transactions, digital payments, and CRM promotions.</li>
+                    <li>Managed multi-platform delivery orders for 100% on-time accuracy.</li>
+                    <li>Tracked daily inventory via digital tools to minimize waste.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Project | Electricity Consumption Forecasting using ML</span>
+                    <span class="timeline-date">Sep 2025</span>
+                </div>
+                <div class="timeline-subtitle">Machine Learning Project (Thailand)</div>
+                <ul>
+                    <li><strong>Data Prep:</strong> Cleaned 8,806 national power records via Altair AI Studio following CRISP-DM.</li>
+                    <li><strong>Features:</strong> Modeled 9 variables including regional generation, cross-border imports, and seasonality.</li>
+                    <li><strong>Modeling:</strong> Built and optimized Random Forest, Neural Network, and Linear Regression models.</li>
+                    <li><strong>Evaluation:</strong> Achieved 96.70% accuracy (R²) and 514.03 RMSE using Random Forest via 10-fold Cross Validation.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">MSU OPEN HOUSE</span>
+                    <span class="timeline-date">Dec 2024</span>
+                </div>
+                <div class="timeline-subtitle">Mahasarakham University</div>
+                <ul>
+                    <li>Supported visitor reception and provided program-related information to prospective students.</li>
+                    <li>Introduced the Digital Business and Information Systems program and academic pathways within the faculty.</li>
+                    <li>Responded to inquiries and assisted in resolving issues during the event.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifications">
+            <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-title">
+                        <span>MSU English Exit Examination (CER B1)</span>
+                        <span class="cert-date">Feb 2026</span>
+                    </div>
+                    <div class="cert-desc">Mahasarakham University</div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-title">
+                        <span>Gemini Certified Educator</span>
+                        <span class="cert-date">Feb 2026</span>
+                    </div>
+                    <div class="cert-desc">Google for Education • Certified in AI literacy, workflow optimization, and content creation using Gemini AI.</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-title">
+                        <span>Microsoft Power BI Training Certificate</span>
+                        <span class="cert-date">Aug 2025</span>
+                    </div>
+                    <div class="cert-desc">Thailand Professional Qualification Institute (TPQI) • Mastered data visualization, business intelligence, and interactive dashboard creation.</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-title">
+                        <span>IC3 Digital Literacy Certification (GS6 Level 1)</span>
+                        <span class="cert-date">Feb 2025</span>
+                    </div>
+                    <div class="cert-desc">Certiport (Pearson VUE) • Certified in Technology Basics, Information Management, and Digital Citizenship.</div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-title">
+                        <span>LINE Official Account (LINE OA) Strategy for Business Growth</span>
+                        <span class="cert-date">Dec 2024</span>
+                    </div>
+                    <div class="cert-desc">MBS, Mahasarakham University • Trained in CRM management, digital marketing, and LINE OA business features.</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Atchananya Pitasaeng. Built with 🌸 and passion.</p>
+    </footer>
+
+</body>
+</html>
