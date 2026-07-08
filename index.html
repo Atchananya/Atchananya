@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -121,6 +121,39 @@
         .cert-left p { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.2rem; }
         .cert-time { font-family: var(--font-display); font-size: 0.9rem; color: var(--rose-dark); font-weight: 500; }
 
+        /* PHOTO GALLERY STYLES */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(224, 122, 147, 0.1);
+            border-color: var(--rose-primary);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--ink-muted);
+            font-weight: 500;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
         /* ==========================================================================
            FOOTER SECTION
            ========================================================================== */
@@ -166,12 +199,13 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#gallery">Gallery</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- HERO PROFILE SECTION -->
-    <header class="hero-section">
+    <header class="hero-section" id="about">
         <div class="global-wrapper">
             <div class="hero-grid">
                 <div class="hero-info">
@@ -186,7 +220,7 @@
                     </div>
                 </div>
                 <div class="profile-img-container">
-                    <img src="profile.jpg" alt="Atchananya Pitasaeng">
+                    <img src="images/profile.jpg" alt="Atchananya Pitasaeng">
                 </div>
             </div>
 
@@ -331,6 +365,31 @@
             </div>
         </section>
 
+        <!-- PHOTO GALLERY SECTION -->
+        <section id="gallery">
+            <div class="section-header">
+                <span class="section-tag">Gallery</span>
+                <h2 class="section-title">My Activities & Projects</h2>
+            </div>
+            <div class="gallery-grid">
+                <!-- รูปภาพที่ 1 (ใช้รูปโปรไฟล์เป็นตัวอย่างเบื้องต้น) -->
+                <div class="gallery-item">
+                    <img src="images/profile.jpg" alt="รูปโปรไฟล์และกิจกรรม">
+                    <div class="gallery-caption">กิจกรรมหรือภาพผลงานตัวอย่าง 1</div>
+                </div>
+                <!-- รูปภาพที่ 2 -->
+                <div class="gallery-item">
+                    <img src="images/profile.jpg" alt="รูปโปรไฟล์และกิจกรรม">
+                    <div class="gallery-caption">กิจกรรมหรือภาพผลงานตัวอย่าง 2</div>
+                </div>
+                <!-- รูปภาพที่ 3 -->
+                <div class="gallery-item">
+                    <img src="images/profile.jpg" alt="รูปโปรไฟล์และกิจกรรม">
+                    <div class="gallery-caption">กิจกรรมหรือภาพผลงานตัวอย่าง 3</div>
+                </div>
+            </div>
+        </section>
+
         <!-- EDUCATION SECTION -->
         <section id="education">
             <div class="section-header">
@@ -398,4 +457,5 @@
     </footer>
 
 </body>
-</html>
+</html>"""
+print("HTML ready to copy")
