@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <img src="profile.jpg" alt="Atchananya Pitasaeng" style="width:150px; height:150px; border-radius:50%; object-fit:cover;">
     <title>Atchananya Pitasaeng - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -35,7 +34,7 @@
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: #5d4037;
-            padding: 60px 20px;
+            padding: 5px 20px 40px 20px;
             text-align: center;
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
@@ -45,6 +44,18 @@
         .header-container {
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        /* สไตล์สำหรับรูปภาพโปรไฟล์ */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            background-color: var(--white);
         }
 
         .header-container h1 {
@@ -254,6 +265,9 @@
 
     <header>
         <div class="header-container">
+            <!-- ดึงรูปภาพโปรไฟล์มาแสดงผลตรงนี้ -->
+            <img src="profile.jpg" alt="Atchananya Pitasaeng" class="profile-img">
+            
             <h1>ATCHANANYA PITASAENG</h1>
             <p>Senior Digital Business and Information Systems Student</p>
             <div class="contact-info">
