@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atchananya Pitasaeng | Portfolio</title>
+    <title>Atchananya Pitasaeng | Data Analyst Portfolio</title>
     <meta name="description" content="Senior Digital Business and Information Systems student focused on Data Analytics & Business Analysis.">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           PREMIUM MINIMALIST PINK THEME CONFIGURATION
+           PREMIUM HIGH-TECH DATA PINK THEME (DATA ANALYTICS FOCUSED)
            ========================================================================= */
         :root {
-            --bg-canvas:     #FFF8FA;   /* สีพื้นหลังชมพูระเรื่อแบบหรูหรา */
-            --bg-card:       #FFFFFF;   /* สีการ์ดสีขาวบริสุทธิ์เพื่อความคมชัด */
-            --rose-primary:  #E07A93;   /* สีชมพูโรสโกลด์หลัก */
-            --rose-dark:     #A64B62;   /* สีชมพูเข้มสำหรับข้อความสำคัญ */
-            --rose-light:    #FFF0F4;   /* สีชมพูอ่อนพาสเทลสำหรับพื้นหลังย่อย */
-            --ink-main:      #2D2527;   /* สีข้อความหลักเทาเข้มเกือบดำ */
-            --ink-muted:     #6E6164;   /* สีข้อความรองเทาละมุน */
-            --border-color:  #F2E2E6;   /* สีเส้นขอบชมพูอ่อนมากๆ */
+            --bg-canvas:      #FAF6F8;   /* พื้นหลังสว่าง สะอาด ตาไม่ล้า */
+            --bg-card:        #FFFFFF;   /* การ์ดสีขาวตัดขอบชัดเจน */
+            --rose-primary:   #E34A7B;   /* ชมพูสดใสสไตล์ Tech/Data Visual */
+            --rose-dark:      #8F2648;   /* ชมพูเข้มลุ่มลึกสำหรับ Text / Headers */
+            --rose-light:     #FFF0F5;   /* ชมพูพาสเทลสำหรับตารางหรือ UI Elements */
+            --ink-main:       #1E191B;   /* เทาเข้มเกือบดำ อ่านง่ายเป็นทางการ */
+            --ink-muted:      #5C5054;   /* เทาอมชมพูสำหรับคำอธิบาย */
+            --border-color:   #E8D5DA;   /* เส้นขอบบางสไตล์ Grid Line */
+            --grid-line:      rgba(227, 74, 123, 0.04); /* ลายตาราง Matrix Data ด้านหลัง */
             
             --font-display:  'Space Grotesk', -apple-system, sans-serif;
             --font-body:     'Plus Jakarta Sans', 'Sarabun', sans-serif;
@@ -32,25 +33,34 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-canvas); color: var(--ink-main); font-family: var(--font-body); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+        body { 
+            background-color: var(--bg-canvas); 
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 30px 30px; /* สร้าง Pattern ตารางจำลองกราฟด้านหลัง */
+            color: var(--ink-main); 
+            font-family: var(--font-body); 
+            -webkit-font-smoothing: antialiased; 
+            line-height: 1.6; 
+        }
 
         a { color: inherit; text-decoration: none; }
-        
-        /* CONTAINER TYPE FROM AKSHAY'S SITE */
         .global-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
         /* ==========================================================================
            TOP BADGE & NAV BAR
            ========================================================================== */
         .status-badge-bar { background-color: var(--rose-light); border-bottom: 1px solid var(--border-color); padding: 0.5rem 0; text-align: center; }
-        .status-msg { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 500; color: var(--rose-dark); }
-        .pulse-dot { width: 8px; height: 8px; background-color: #4CAF50; border-radius: 50%; display: inline-block; box-shadow: 0 0 0 rgba(76, 175, 80, 0.4); animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); } 70% { box-shadow: 0 0 0 6px rgba(76, 175, 80, 0); } 100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); } }
+        .status-msg { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--rose-dark); }
+        .pulse-dot { width: 8px; height: 8px; background-color: #2ECC71; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
 
-        nav { background: rgba(255, 248, 250, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-color); }
+        nav { background: rgba(250, 246, 248, 0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-color); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .nav-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--rose-dark); letter-spacing: -0.02em; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.9rem; font-weight: 500; color: var(--ink-muted); }
+        .nav-logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--rose-dark); letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.5rem; }
+        .nav-logo i { color: var(--rose-primary); font-size: 1.1rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.9rem; font-weight: 600; color: var(--ink-muted); }
         .nav-links a:hover { color: var(--rose-primary); }
 
         /* ==========================================================================
@@ -58,18 +68,20 @@
            ========================================================================== */
         .hero-section { padding: 5rem 0 4rem 0; }
         .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
-        .hero-info h1 { font-family: var(--font-display); font-size: 3.5rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
-        .hero-info h1 span { color: var(--rose-primary); }
-        .hero-title-tag { font-size: 1.25rem; color: var(--ink-muted); font-weight: 400; margin-bottom: 1.5rem; }
+        .hero-info h1 { font-family: var(--font-display); font-size: 3.8rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; }
+        .hero-info h1 span { color: var(--rose-primary); position: relative; }
+        .hero-title-tag { font-size: 1.2rem; color: var(--rose-dark); font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); }
         .hero-bio { color: var(--ink-muted); font-size: 1.05rem; max-width: 680px; margin-bottom: 2.5rem; text-align: justify; line-height: 1.7; }
         
         .hero-cta-group { display: flex; gap: 1rem; }
-        .btn-primary { background-color: var(--rose-primary); color: white; padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 500; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(224, 122, 147, 0.25); transition: all 0.2s; }
+        .btn-primary { background-color: var(--rose-primary); color: white; padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(227, 74, 123, 0.3); transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
         .btn-primary:hover { background-color: var(--rose-dark); transform: translateY(-1px); }
-        .btn-secondary { border: 1px solid var(--border-color); background: var(--bg-card); color: var(--ink-main); padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 500; font-size: 0.95rem; transition: all 0.2s; }
+        .btn-secondary { border: 1px solid var(--border-color); background: var(--bg-card); color: var(--ink-main); padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
         .btn-secondary:hover { background: var(--rose-light); border-color: var(--rose-primary); }
 
-        .profile-img-container { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 30px rgba(224, 122, 147, 0.15); }
+        .profile-container-wrapper { position: relative; }
+        .profile-img-container { width: 190px; height: 190px; border-radius: 14px; overflow: hidden; border: 3px solid var(--rose-primary); background: #fff; transform: rotate(2deg); box-shadow: 10px 10px 0px var(--rose-light); transition: transform 0.3s; }
+        .profile-img-container:hover { transform: rotate(0deg); }
         .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
         /* ==========================================================================
@@ -77,76 +89,68 @@
            ========================================================================== */
         section { padding: 5rem 0; border-top: 1px solid var(--border-color); }
         .section-header { margin-bottom: 3rem; }
-        .section-tag { font-family: var(--font-display); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rose-primary); font-weight: 600; margin-bottom: 0.5rem; display: block; }
-        .section-title { font-family: var(--font-display); font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; }
+        .section-tag { font-family: var(--font-display); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rose-primary); font-weight: 700; margin-bottom: 0.5rem; display: block; }
+        .section-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink-main); }
 
         /* EXPERTISE CARDS LAYOUT */
         .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .expertise-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 2.5rem 2rem; border-radius: 10px; transition: all 0.3s; }
-        .expertise-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(224, 122, 147, 0.06); border-color: var(--rose-primary); }
-        .exp-icon { font-size: 1.75rem; color: var(--rose-primary); margin-bottom: 1.5rem; }
-        .expertise-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
-        .expertise-card p { color: var(--ink-muted); font-size: 0.95rem; }
+        .expertise-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 2.5rem 2rem; border-radius: 8px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .expertise-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--rose-primary); transform: scaleY(0); transition: transform 0.2s ease; }
+        .expertise-card:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(227, 74, 123, 0.08); border-color: var(--rose-primary); }
+        .expertise-card:hover::before { transform: scaleY(1); }
+        .exp-icon { font-size: 2rem; color: var(--rose-primary); margin-bottom: 1.5rem; }
+        .expertise-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--rose-dark); font-family: var(--font-display); }
+        .expertise-card p { color: var(--ink-muted); font-size: 0.95rem; text-align: justify; }
 
-        /* SKILLS GRID SYSTEM */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-        .skill-group-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.75rem; border-radius: 8px; }
-        .skill-group-box h4 { font-family: var(--font-display); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--rose-dark); margin-bottom: 1.25rem; border-left: 3px solid var(--rose-primary); padding-left: 0.7rem; }
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .skill-tag { background: var(--bg-canvas); border: 1px solid var(--border-color); color: var(--ink-main); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.15s; }
-        .skill-tag:hover { background: var(--rose-primary); color: white; border-color: var(--rose-primary); }
+        /* DATA SKILLS METRIC */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; }
+        .skill-group-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.75rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.01); }
+        .skill-group-box h4 { font-family: var(--font-display); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--rose-dark); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .skill-group-box h4 i { color: var(--rose-primary); }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .skill-tag { background: var(--bg-canvas); border: 1px solid var(--border-color); color: var(--ink-main); padding: 0.45rem 0.85rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; font-family: var(--font-display); }
+        .skill-tag:hover { background: var(--rose-primary); color: white; border-color: var(--rose-primary); transform: scale(1.05); }
 
-        /* PROJECTS & EXPERIENCE LIST LAYOUT */
-        .project-list { display: flex; flex-direction: column; gap: 2rem; }
-        .project-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 10px; display: grid; grid-template-columns: 1fr 250px; gap: 3rem; }
-        .project-meta h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .project-inst { font-size: 0.95rem; color: var(--rose-dark); font-weight: 500; margin-bottom: 1rem; }
-        .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .project-bullets li { font-size: 0.95rem; color: var(--ink-muted); position: relative; padding-left: 1.25rem; }
-        .project-bullets li::before { content: "•"; position: absolute; left: 0; color: var(--rose-primary); font-size: 1.2rem; }
-        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .project-date-side { font-family: var(--font-display); font-size: 0.95rem; color: var(--ink-muted); text-align: right; font-weight: 500; }
+        /* PROJECTS (DASHBOARD CASE STUDIES STYLE) */
+        .project-list { display: flex; flex-direction: column; gap: 2.5rem; }
+        .project-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; display: grid; grid-template-columns: 1fr 220px; gap: 3rem; overflow: hidden; position: relative; }
+        .project-main-content { padding: 2.5rem 0 2.5rem 2.5rem; }
+        .project-side-content { padding: 2.5rem 2.5rem 2.5rem 0; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; border-left: 1px dashed var(--border-color); }
         
-        /* CERTIFICATIONS ROW */
-        .cert-rows-container { display: flex; flex-direction: column; gap: 1rem; }
-        .cert-row { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; }
-        .cert-row:hover { border-color: var(--rose-primary); }
-        .cert-left h4 { font-size: 1.05rem; font-weight: 600; }
-        .cert-left p { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.2rem; }
-        .cert-time { font-family: var(--font-display); font-size: 0.9rem; color: var(--rose-dark); font-weight: 500; }
+        .project-meta h3 { font-size: 1.45rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--ink-main); }
+        .project-inst { font-size: 0.9rem; color: var(--rose-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
+        .project-bullets li { font-size: 0.95rem; color: var(--ink-muted); position: relative; padding-left: 1.5rem; text-align: justify; }
+        .project-bullets li::before { content: "\f105"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--rose-primary); }
+        
+        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .project-date-side { font-family: var(--font-display); font-size: 0.95rem; color: var(--rose-dark); font-weight: 700; background: var(--rose-light); padding: 0.3rem 0.7rem; border-radius: 4px; }
+        .project-metric-badge { text-align: right; background: #FFFDFE; border: 1px solid var(--border-color); padding: 0.8rem 1rem; border-radius: 6px; margin-top: 1rem; width: 100%; }
+        .project-metric-val { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--rose-primary); line-height: 1; }
+        .project-metric-lbl { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; margin-top: 0.25rem; }
 
-        /* PHOTO GALLERY STYLES */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        .gallery-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(224, 122, 147, 0.1);
-            border-color: var(--rose-primary);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-        .gallery-caption {
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: var(--ink-muted);
-            font-weight: 500;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-        }
+        /* CERTIFICATIONS LINE LIST */
+        .cert-rows-container { display: flex; flex-direction: column; gap: 1rem; }
+        .cert-row { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; transition: border-color 0.2s; }
+        .cert-row:hover { border-color: var(--rose-primary); }
+        .cert-left { display: flex; align-items: center; gap: 1.2rem; }
+        .cert-icon-box { width: 40px; height: 40px; background: var(--rose-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--rose-primary); font-size: 1.1rem; }
+        .cert-left h4 { font-size: 1.05rem; font-weight: 700; color: var(--ink-main); }
+        .cert-left p { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.1rem; }
+        .cert-time { font-family: var(--font-display); font-size: 0.9rem; color: var(--rose-dark); font-weight: 600; }
+
+        /* GALLERY AS PORTFOLIO VISUALS */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .gallery-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }
+        .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.04); border-color: var(--rose-primary); }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; filter: grayscale(10%); transition: filter 0.3s; }
+        .gallery-item:hover img { filter: grayscale(0%); }
+        .gallery-caption { padding: 1rem; font-size: 0.9rem; color: var(--ink-main); font-weight: 600; text-align: center; border-top: 1px solid var(--border-color); background: #FCF9FA; }
+
+        /* EDUCATION CONTAINER BOX */
+        .edu-box { padding: 2rem 2.5rem !important; display: flex !important; justify-content: space-between; align-items: center; }
+        .edu-gpa { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--rose-primary); text-align: right; }
+        .edu-gpa-lbl { font-size: 0.75rem; color: var(--ink-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
 
         /* ==========================================================================
            FOOTER SECTION
@@ -160,15 +164,19 @@
            MOBILE RESPONSIVE
            ========================================================================== */
         @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; justify-items: center; }
+            .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; justify-items: center; }
             .hero-bio { text-align: center; }
             .hero-cta-group { justify-content: center; }
             .expertise-grid { grid-template-columns: 1fr; }
-            .project-card { grid-template-columns: 1fr; gap: 1rem; }
-            .project-date-side { text-align: left; order: -1; color: var(--rose-primary); }
-            .cert-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .project-card { grid-template-columns: 1fr; gap: 0; }
+            .project-main-content { padding: 2rem 2rem 1rem 2rem; }
+            .project-side-content { padding: 0 2rem 2rem 2rem; border-left: none; align-items: flex-start; }
+            .project-metric-badge { text-align: left; }
+            .cert-row { flex-direction: column; align-items: flex-start; gap: 0.8rem; padding: 1.5rem; }
+            .cert-left { align-items: flex-start; }
             .nav-links { display: none; }
             .footer-flex { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .edu-box { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
         }
     </style>
 </head>
@@ -178,21 +186,23 @@
     <div class="status-badge-bar">
         <div class="status-msg">
             <span class="pulse-dot"></span>
-            Available for Work & Internship Opportunities (Dec 2026 – Mar 2027)
+            Open for Data Analyst Internships & Career Opportunities (Dec 2026 – Mar 2027)
         </div>
     </div>
 
     <!-- STICKY NAVIGATION -->
     <nav>
         <div class="global-wrapper nav-container">
-            <div class="nav-logo">AP.PORTFOLIO</div>
+            <div class="nav-logo">
+                <i class="fa-solid fa-chart-network"></i> AP.ANALYTICS
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#gallery">Visualizations</a></li>
             </ul>
         </div>
     </nav>
@@ -203,17 +213,21 @@
             <div class="hero-grid">
                 <div class="hero-info">
                     <h1>Hi, I'm <span>Atchananya</span>.</h1>
-                    <div class="hero-title-tag">Data Analyst | Business & Systems Analyst | DBIS Student</div>
+                    <div class="hero-title-tag">
+                        <i class="fa-solid fa-database"></i> Data Analyst & Business Intelligence Specialist
+                    </div>
                     <p class="hero-bio">
-                        สวัสดีค่ะ ดิฉันนางสาวอัชนัญญา ปิตะแสง ชื่อเล่นนีน นิสิตชั้นปีที่ 4 สาขาธุรกิจดิจิทัลและระบบสารสนเทศ (Digital Business and Information Systems) คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม มีความสนใจด้านการวิเคราะห์ข้อมูล (Data Analytics), การจัดการฐานข้อมูลผ่าน SQL และการทำ Data Visualization ดิฉันมีความมุ่งมั่นในการเรียนรู้พร้อมประยุกต์ใช้ทักษะเชิงเทคนิคและกระบวนการคิดเชิงวิเคราะห์เพื่อแก้ไขปัญหาทางธุรกิจจริง
+                        สวัสดีค่ะ ดิฉันนางสาวอัชนัญญา ปิตะแสง ชื่อเล่นนีน นิสิตชั้นปีที่ 4 สาขาธุรกิจดิจิทัลและระบบสารสนเทศ (Digital Business and Information Systems) คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม มีความสนใจและเชี่ยวชาญด้านการจัดการโครงสร้างข้อมูลด้วย SQL, การทำ Data Cleansing & Transformation และแปลงข้อมูลดิบให้เป็นหน้าต่างเชิงกลยุทธ์ผ่าน Data Visualization มุ่งมั่นที่จะใช้กระบวนการทางวิทยาศาสตร์ข้อมูลเพื่อขับเคลื่อนการตัดสินใจที่แม่นยำให้กับองค์กร
                     </p>
                     <div class="hero-cta-group">
-                        <a href="mailto:atchananyap@gmail.com" class="btn-primary">Hire Me</a>
-                        <a href="#projects" class="btn-secondary">View Work</a>
+                        <a href="mailto:atchananyap@gmail.com" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+                        <a href="#projects" class="btn-secondary">Explore Projects</a>
                     </div>
                 </div>
-                <div class="profile-img-container">
-                    <img src="images/profile.jpg" alt="Atchananya Pitasaeng">
+                <div class="profile-container-wrapper">
+                    <div class="profile-img-container">
+                        <img src="images/profile.jpg" alt="Atchananya Pitasaeng">
+                    </div>
                 </div>
             </div>
         </div>
@@ -225,24 +239,27 @@
         <!-- EXPERTISE SECTION -->
         <section id="expertise">
             <div class="section-header">
-                <span class="section-tag">Core Focus</span>
-                <h2 class="section-title">What I Specialize In</h2>
+                <span class="section-tag">Core Capabilities</span>
+                <h2 class="section-title">Data Analytics Expertise</h2>
             </div>
             <div class="expertise-grid">
+                <!-- CARD 1 -->
                 <div class="expertise-card">
-                    <div class="exp-icon"><i class="fa-solid fa-chart-simple"></i></div>
-                    <h3>Data Analytics</h3>
-                    <p>รวบรวม ทำความสะอาด และจัดการข้อมูลจำนวนมากเพื่อหา Insight ขับเคลื่อนการตัดสินใจทางธุรกิจ โดยอ้างอิงตามโครงสร้างมาตรฐานอุตสาหกรรมอย่าง CRISP-DM</p>
+                    <div class="exp-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Data Exploratory & Analytics</h3>
+                    <p>สกัด คัดกรอง และทำความสะอาดข้อมูลดิบ (Data Cleansing) เพื่อแปลงโครงสร้างข้อมูลตามกรอบมาตรฐาน CRISP-DM สำหรับค้นหาความสัมพันธ์เชิงลึกทางสถิติที่ซ่อนอยู่</p>
                 </div>
+                <!-- CARD 2 -->
                 <div class="expertise-card">
-                    <div class="exp-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                    <h3>Business & Workflows</h3>
-                    <p>ออกแบบโครงสร้างระบบ วางขั้นตอนกระบวนการทำงาน (Workflow Automation) และการจัดทำโครงร่างหน้าจอระบบ (Wireframe/Prototype) เพื่อให้ตอบโจทย์ผู้ใช้งาน</p>
+                    <div class="exp-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>BI & Data Visualization</h3>
+                    <p>ออกแบบและพัฒนา Interactive Dashboard ที่ซับซ้อนให้เข้าใจง่าย เพื่อสนับสนุนการตัดสินใจของผู้บริหาร (Executive Insights) พร้อมวางระบบ Workflow อัตโนมัติ</p>
                 </div>
+                <!-- CARD 3 -->
                 <div class="expertise-card">
-                    <div class="exp-icon"><i class="fa-solid fa-database"></i></div>
-                    <h3>Database Systems</h3>
-                    <p>ออกแบบ ออกคำสั่ง และจัดการระบบฐานข้อมูลเชิงสัมพันธ์ผ่านโครงสร้างภาษา SQL เพื่อควบคุมความถูกต้อง ปลอดภัย และดึงข้อมูลไปใช้งานได้อย่างถูกต้องแม่นยำ</p>
+                    <div class="exp-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Database Modeling & SQL</h3>
+                    <p>วางโครงสร้างฐานข้อมูลเชิงสัมพันธ์ (Relational Database) เขียนสคริปต์คำสั่ง SQL ในการ Query, Join, และกรองข้อมูลความเร็วสูงอย่างแม่นยำและปลอดภัย</p>
                 </div>
             </div>
         </section>
@@ -250,40 +267,40 @@
         <!-- TECHNICAL SKILLS MATRIX -->
         <section id="skills">
             <div class="section-header">
-                <span class="section-tag">Skills</span>
-                <h2 class="section-title">Technologies I Use</h2>
+                <span class="section-tag">Analytical Stack</span>
+                <h2 class="section-title">Tools & Technologies</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-group-box">
-                    <h4>Programming</h4>
+                    <h4><i class="fa-solid fa-code"></i> Query & Code</h4>
                     <div class="tag-cloud">
-                        <span class="skill-tag">Python</span>
                         <span class="skill-tag">SQL (Oracle)</span>
+                        <span class="skill-tag">Python</span>
                         <span class="skill-tag">R Language</span>
                     </div>
                 </div>
                 <div class="skill-group-box">
-                    <h4>Analytics & BI</h4>
+                    <h4><i class="fa-solid fa-chart-pie"></i> Business Intelligence</h4>
                     <div class="tag-cloud">
                         <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">RapidMiner</span>
                         <span class="skill-tag">Altair AI Studio</span>
+                        <span class="skill-tag">RapidMiner</span>
                     </div>
                 </div>
                 <div class="skill-group-box">
-                    <h4>Design & Tools</h4>
+                    <h4><i class="fa-solid fa-gears"></i> Systems & Automation</h4>
                     <div class="tag-cloud">
-                        <span class="skill-tag">Figma</span>
                         <span class="skill-tag">n8n Automation</span>
+                        <span class="skill-tag">Figma Prototyping</span>
                         <span class="skill-tag">Git / GitHub</span>
                     </div>
                 </div>
                 <div class="skill-group-box">
-                    <h4>Core Concept</h4>
+                    <h4><i class="fa-solid fa-brain"></i> Data Theory</h4>
                     <div class="tag-cloud">
                         <span class="skill-tag">Data Cleansing</span>
                         <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">System Design</span>
+                        <span class="skill-tag">CRISP-DM Framework</span>
                     </div>
                 </div>
             </div>
@@ -292,47 +309,63 @@
         <!-- FEATURED PROJECTS / EXPERIENCES -->
         <section id="projects">
             <div class="section-header">
-                <span class="section-tag">Case Studies</span>
-                <h2 class="section-title">Real-World Projects & Experience</h2>
+                <span class="section-tag">Data Case Studies</span>
+                <h2 class="section-title">Real-World Projects</h2>
             </div>
             <div class="project-list">
                 
                 <!-- PROJECT 1 -->
                 <div class="project-card">
-                    <div class="project-meta">
-                        <h3>Electricity Consumption Forecasting using Machine Learning</h3>
-                        <div class="project-inst">Machine Learning & Data Analytics Project</div>
-                        <ul class="project-bullets">
-                            <li>จัดเตรียม ทำความสะอาด และแปลงรูปแบบข้อมูลสถิติพลังงานไฟฟ้าระดับประเทศจำนวนกว่า 8,806 เรคคอร์ด อ้างอิงกระบวนการทำงานตามกรอบ CRISP-DM</li>
-                            <li>พัฒนาและทดสอบประสิทธิภาพโมเดลวิเคราะห์ข้อมูลพยากรณ์ ได้แก่ Random Forest, Neural Network และ Linear Regression</li>
-                            <li>โมเดล Random Forest ประสบความสำเร็จในการทำงานด้วยความแม่นยำพยากรณ์ (R²) สูงถึง 96.70% ผ่านเกณฑ์การประเมินแบบ Cross-Validation</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Altair AI Studio</span>
-                            <span class="skill-tag">Machine Learning</span>
+                    <div class="project-main-content">
+                        <div class="project-meta">
+                            <h3>Electricity Consumption Forecasting using Machine Learning</h3>
+                            <div class="project-inst"><i class="fa-solid fa-microchip"></i> Predictive Analytics Case Study</div>
+                            <ul class="project-bullets">
+                                <li>ทำความสะอาด ขจัดข้อมูลสูญหาย (Missing Values) และวิเคราะห์โครงสร้างสถิติพลังงานระดับชาติรวมกว่า 8,806 เรคคอร์ด</li>
+                                <li>พัฒนา อบรม และประเมินประสิทธิภาพโมเดลพยากรณ์ข้อมูลเทียบกัน 3 รูปแบบ: Random Forest, Neural Network และ Linear Regression</li>
+                                <li>โมเดล Random Forest ประสบความสำเร็จสูงสุดในการทดสอบวัดเกณฑ์ด้วยค่าสัมประสิทธิ์การตัดสินใจคัดกรองข้ามกลุ่ม (Cross-Validation)</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Altair AI Studio</span>
+                                <span class="skill-tag">Machine Learning</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-date-side">Sep 2025</div>
+                    <div class="project-side-content">
+                        <div class="project-date-side">Sep 2025</div>
+                        <div class="project-metric-badge">
+                            <div class="project-metric-val">96.70%</div>
+                            <div class="project-metric-lbl">Model Accuracy (R²)</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- PROJECT 2 -->
                 <div class="project-card">
-                    <div class="project-meta">
-                        <h3>Freelance Specialist & Operations Support</h3>
-                        <div class="project-inst">Dunkin' Company</div>
-                        <ul class="project-bullets">
-                            <li>จัดการและควบคุมธุรกรรมผ่านระบบขายหน้าร้าน POS รองรับการชำระเงินดิจิทัลรูปแบบต่างๆ และแคมเปญสิทธิประโยชน์ CRM ประจำแบรนด์</li>
-                            <li>บริหารและจัดระบบคำสั่งซื้อจากแพลตฟอร์มฟู้ดเดลิเวอรี่ ควบคุมความถูกต้องแม่นยำในการจัดออเดอร์และการจัดส่งทันเวลา</li>
-                            <li>ทำหน้าที่ตรวจสอบและบันทึกประวัติยอดสินค้าคงคลังประจำวันเพื่อวิเคราะห์และลดอัตราความสูญเสียของวัตถุดิบ</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="skill-tag">POS Systems</span>
-                            <span class="skill-tag">Inventory Management</span>
-                            <span class="skill-tag">Operations Analytics</span>
+                    <div class="project-main-content">
+                        <div class="project-meta">
+                            <h3>Freelance Specialist & Operations Support</h3>
+                            <div class="project-inst"><i class="fa-solid fa-shop"></i> Dunkin' Company</div>
+                            <ul class="project-bullets">
+                                <li>จัดการตรวจสอบธุรกรรมการขายหน้าร้านผ่านระบบ POS และเชื่อมโยงฐานข้อมูลแคมเปญสิทธิประโยชน์ CRM ประจำแบรนด์</li>
+                                <li>ควบคุมความถูกต้องของชุดข้อมูลคำสั่งซื้อและระยะเวลาการทำงานของพาร์ทเนอร์แพลตฟอร์มฟู้ดเดลิเวอรี่</li>
+                                <li>จัดทำระบบบันทึก ตรวจสอบยอดสต็อกคงคลังดิบรายวัน เพื่อนำไปวิเคราะห์และหาจุดลดอัตราการสูญเสียของวัตถุดิบ (Waste Reduction Analytics)</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span class="skill-tag">POS Systems</span>
+                                <span class="skill-tag">Inventory Control</span>
+                                <span class="skill-tag">Operations Analytics</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-date-side">Apr 2026 - Jun 2026</div>
+                    <div class="project-side-content">
+                        <div class="project-date-side">Apr 2026 - Jun 2026</div>
+                        <div class="project-metric-badge">
+                            <div class="project-metric-val">Daily Tracking</div>
+                            <div class="project-metric-lbl">Inventory Optimizing</div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -341,21 +374,21 @@
         <!-- PHOTO GALLERY SECTION -->
         <section id="gallery">
             <div class="section-header">
-                <span class="section-tag">Gallery</span>
-                <h2 class="section-title">My Activities & Projects</h2>
+                <span class="section-tag">Visual Artifacts</span>
+                <h2 class="section-title">Dashboards & Activities</h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/profile.jpg" alt="รูปโปรไฟล์และกิจกรรม">
-                    <div class="gallery-caption">กิจกรรมหรือภาพผลงานตัวอย่าง 1</div>
+                    <img src="images/profile.jpg" alt="Data Analytics Visualization">
+                    <div class="gallery-caption">Interactive Dashboard & Insight Report</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/profile.jpg" alt="รูปโปรไฟล์และกิจกรรม">
-                    <div class="gallery-caption">กิจกรรมหรือภาพผลงานตัวอย่าง 2</div>
+                    <img src="images/profile.jpg" alt="System Flow Analysis">
+                    <div class="gallery-caption">Data Workflow & System Design Architecture</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/profile.jpg" alt="รูปโปรไฟล์และกิจกรรม">
-                    <div class="gallery-caption">กิจกรรมหรือภาพผลงานตัวอย่าง 3</div>
+                    <img src="images/profile.jpg" alt="Academic Presentation">
+                    <div class="gallery-caption">Project Pitching & Operations Presentations</div>
                 </div>
             </div>
         </section>
@@ -363,17 +396,20 @@
         <!-- EDUCATION SECTION -->
         <section id="education">
             <div class="section-header">
-                <span class="section-tag">Background</span>
+                <span class="section-tag">Timeline</span>
                 <h2 class="section-title">Education History</h2>
             </div>
             <div class="project-list">
-                <div class="project-card" style="grid-template-columns: 1fr auto; padding: 2rem 2.5rem;">
+                <div class="project-card edu-box">
                     <div>
                         <h3>Bachelor of Arts in Digital Business and Information Systems</h3>
                         <div class="project-inst" style="margin-bottom: 0.5rem;">Mahasarakham Business School, Mahasarakham University (MSU)</div>
-                        <p style="color: var(--ink-muted); font-size: 0.95rem;">เกรดเฉลี่ยสะสมปัจจุบัน (Current GPAX): 3.36 — คาดว่าจะสำเร็จการศึกษา พฤษภาคม 2570</p>
+                        <p style="color: var(--ink-muted); font-size: 0.95rem;">คาดว่าจะสำเร็จการศึกษา: พฤษภาคม 2570</p>
                     </div>
-                    <div class="project-date-side">2023 - Present</div>
+                    <div>
+                        <div class="edu-gpa">3.36</div>
+                        <div class="edu-gpa-lbl">Current GPAX</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -381,28 +417,37 @@
         <!-- CERTIFICATIONS SECTION -->
         <section id="certifications" style="margin-bottom: 4rem;">
             <div class="section-header">
-                <span class="section-tag">Credentials</span>
-                <h2 class="section-title">Certifications & Training</h2>
+                <span class="section-tag">Verified Credentials</span>
+                <h2 class="section-title">Certifications & Industry Training</h2>
             </div>
             <div class="cert-rows-container">
                 <div class="cert-row">
                     <div class="cert-left">
-                        <h4>Gemini Certified Educator</h4>
-                        <p>Google for Education • ขีดความสามารถด้าน AI Literacy และกระบวนการทำงานอัตโนมัติด้วย AI</p>
+                        <div class="cert-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div>
+                            <h4>Gemini Certified Educator</h4>
+                            <p>Google for Education • ขีดความสามารถด้าน AI Literacy และกระบวนการทำงานอัตโนมัติด้วย AI</p>
+                        </div>
                     </div>
                     <div class="cert-time">Feb 2026</div>
                 </div>
                 <div class="cert-row">
                     <div class="cert-left">
-                        <h4>Microsoft Power BI Training Certificate</h4>
-                        <p>สถาบันคุณวุฒิวิชาชีพ (TPQI) • การจัดทำ Interactive Dashboard เพื่อวิเคราะห์ข้อมูลเชิงธุรกิจ</p>
+                        <div class="cert-icon-box"><i class="fa-solid fa-chart-column"></i></div>
+                        <div>
+                            <h4>Microsoft Power BI Training Certificate</h4>
+                            <p>สถาบันคุณวุฒิวิชาชีพ (TPQI) • การจัดทำ Interactive Dashboard เพื่อวิเคราะห์ข้อมูลเชิงธุรกิจ</p>
+                        </div>
                     </div>
                     <div class="cert-time">Aug 2025</div>
                 </div>
                 <div class="cert-row">
                     <div class="cert-left">
-                        <h4>IC3 Digital Literacy Certification (GS6 Level 1)</h4>
-                        <p>Certiport (Pearson VUE) • การรับรองมาตรฐานสากลด้านความรู้ความเข้าใจเทคโนโลยีดิจิทัล</p>
+                        <div class="cert-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div>
+                            <h4>IC3 Digital Literacy Certification (GS6 Level 1)</h4>
+                            <p>Certiport (Pearson VUE) • การรับรองมาตรฐานสากลด้านความรู้ความเข้าใจเทคโนโลยีดิจิทัล</p>
+                        </div>
                     </div>
                     <div class="cert-time">Feb 2025</div>
                 </div>
@@ -416,7 +461,7 @@
         <div class="global-wrapper footer-flex">
             <div>
                 <p>&copy; 2026 Atchananya Pitasaeng. All rights reserved.</p>
-                <p style="font-size: 0.8rem; margin-top: 0.25rem; opacity: 0.7;">Minimalist Premium Pink Theme</p>
+                <p style="font-size: 0.8rem; margin-top: 0.25rem; opacity: 0.6;"><i class="fa-solid fa-code-branch"></i> Data Analyst Minimalist Premium Template</p>
             </div>
             <div class="footer-socials">
                 <a href="mailto:atchananyap@gmail.com"><i class="fa-solid fa-envelope"></i></a>
