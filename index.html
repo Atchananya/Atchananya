@@ -134,10 +134,10 @@
         .cert-row { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; transition: border-color 0.2s; }
         .cert-row:hover { border-color: var(--rose-primary); }
         .cert-left { display: flex; align-items: center; gap: 1.2rem; }
-        .cert-icon-box { width: 40px; height: 40px; background: var(--rose-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--rose-primary); font-size: 1.1rem; }
+        .cert-icon-box { width: 40px; height: 40px; background: var(--rose-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--rose-primary); font-size: 1.1rem; flex-shrink: 0; }
         .cert-left h4 { font-size: 1.05rem; font-weight: 700; color: var(--ink-main); }
         .cert-left p { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.1rem; }
-        .cert-time { font-family: var(--font-display); font-size: 0.9rem; color: var(--rose-dark); font-weight: 600; }
+        .cert-time { font-family: var(--font-display); font-size: 0.9rem; color: var(--rose-dark); font-weight: 600; white-space: nowrap; }
 
         /* GALLERY AS PORTFOLIO VISUALS */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
@@ -153,7 +153,7 @@
         .edu-gpa-lbl { font-size: 0.75rem; color: var(--ink-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
 
         /* ==========================================================================
-           MODAL POPUP STYLES (ส่วนที่เพิ่มใหม่)
+           MODAL POPUP STYLES
            ========================================================================== */
         .modal {
             display: none; 
@@ -277,7 +277,6 @@
                         สวัสดีค่ะ ดิฉันนางสาวอัชนัญญา ปิตะแสง ชื่อเล่นนีน นิสิตชั้นปีที่ 4 สาขาธุรกิจดิจิทัลและระบบสารสนเทศ (Digital Business and Information Systems) คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม มีความสนใจและเชี่ยวชาญด้านการจัดการโครงสร้างข้อมูลด้วย SQL, การทำ Data Cleansing & Transformation และแปลงข้อมูลดิบให้เป็นหน้าต่างเชิงกลยุทธ์ผ่าน Data Visualization มุ่งมั่นที่จะใช้กระบวนการทางวิทยาศาสตร์ข้อมูลเพื่อขับเคลื่อนการตัดสินใจที่แม่นยำให้กับองค์กร
                     </p>
                     <div class="hero-cta-group">
-                        <!-- ปุ่มกดเปิด POPUP -->
                         <button class="btn-primary" onclick="openModal()"><i class="fa-solid fa-file-image"></i> View Resume</button>
                         <a href="#projects" class="btn-secondary">Explore Projects</a>
                     </div>
@@ -291,7 +290,7 @@
         </div>
     </header>
 
-    <!-- POPUP MODAL (ส่วนโชว์รูปภาพ RESUME) -->
+    <!-- POPUP MODAL -->
     <div id="resumeModal" class="modal" onclick="closeModal()">
         <span class="close-btn">&times;</span>
         <img class="modal-content" src="images/Atchananya.CSV.png" alt="Resume Atchananya" onclick="event.stopPropagation()">
@@ -381,7 +380,7 @@
                             <h3>Electricity Consumption Forecasting using Machine Learning</h3>
                             <div class="project-inst"><i class="fa-solid fa-microchip"></i> Predictive Analytics Case Study</div>
                             <ul class="project-bullets">
-                                <li>ทำความสะอาด ขจัดข้อมูลสูญหาย (Missing Values) และวิเคราะห์โครงสร้างสถิติพลังงานระดับชาติรวมกว่า 8,806 เรคคอร์ด</li>
+                                <li>ทำความสะอาด ขจัดข้อมูลสูญหาย (Missing Values) และวิเคราะห์โครงสร้างสถิติพลังงานระดับชาติรวมกว่า 8,800 เรคคอร์ด</li>
                                 <li>พัฒนา อบรม และประเมินประสิทธิภาพโมเดลพยากรณ์ข้อมูลเทียบกัน 3 รูปแบบ: Random Forest, Neural Network และ Linear Regression</li>
                                 <li>โมเดล Random Forest ประสบความสำเร็จสูงสุดในการทดสอบวัดเกณฑ์ด้วยค่าสัมประสิทธิ์การตัดสินใจคัดกรองข้ามกลุ่ม (Cross-Validation)</li>
                             </ul>
@@ -473,43 +472,80 @@
             </div>
         </section>
 
-        <!-- CERTIFICATIONS SECTION -->
+        <!-- CERTIFICATIONS SECTION (UPDATED ACCORDING TO RESUME) -->
         <section id="certifications" style="margin-bottom: 4rem;">
             <div class="section-header">
                 <span class="section-tag">Verified Credentials</span>
                 <h2 class="section-title">Certifications & Industry Training</h2>
             </div>
             <div class="cert-rows-container">
+                
+                <div class="cert-row">
+                    <div class="cert-left">
+                        <div class="cert-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4>Information Technology Specialist: Data Analytics</h4>
+                            <p>Certiport (Pearson VUE) • การรับรองมาตรฐานวิชาชีพด้านการวิเคราะห์และจัดการข้อมูลเชิงลึก</p>
+                        </div>
+                    </div>
+                    <div class="cert-time">Aug 2026</div>
+                </div>
+
                 <div class="cert-row">
                     <div class="cert-left">
                         <div class="cert-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
                         <div>
                             <h4>Gemini Certified Educator</h4>
-                            <p>Google for Education • ขีดความสามารถด้าน AI Literacy และกระบวนการทำงานอัตโนมัติด้วย AI</p>
+                            <p>Google for Education • ขีดความสามารถด้าน AI literacy, workflow optimization, และการสร้างคอนเทนต์ด้วย Gemini AI</p>
                         </div>
                     </div>
                     <div class="cert-time">Feb 2026</div>
                 </div>
+
+                <div class="cert-row">
+                    <div class="cert-left">
+                        <div class="cert-icon-box"><i class="fa-solid fa-language"></i></div>
+                        <div>
+                            <h4>MSU English Exit Examination (CEFR B1)</h4>
+                            <p>Mahasarakham University • ผลการทดสอบวัดระดับความสามารถด้านภาษาอังกฤษมาตรฐานสากล</p>
+                        </div>
+                    </div>
+                    <div class="cert-time">Feb 2026</div>
+                </div>
+
                 <div class="cert-row">
                     <div class="cert-left">
                         <div class="cert-icon-box"><i class="fa-solid fa-chart-column"></i></div>
                         <div>
                             <h4>Microsoft Power BI Training Certificate</h4>
-                            <p>สถาบันคุณวุฒิวิชาชีพ (TPQI) • การจัดทำ Interactive Dashboard เพื่อวิเคราะห์ข้อมูลเชิงธุรกิจ</p>
+                            <p>Thailand Professional Qualification Institute (TPQI) • การจัดทำ Interactive Dashboard และ Business Intelligence</p>
                         </div>
                     </div>
                     <div class="cert-time">Aug 2025</div>
                 </div>
+
                 <div class="cert-row">
                     <div class="cert-left">
                         <div class="cert-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
                         <div>
                             <h4>IC3 Digital Literacy Certification (GS6 Level 1)</h4>
-                            <p>Certiport (Pearson VUE) • การรับรองมาตรฐานสากลด้านความรู้ความเข้าใจเทคโนโลยีดิจิทัล</p>
+                            <p>Certiport (Pearson VUE) • Certified in Technology Basics, Information Management, and Digital Citizenship</p>
                         </div>
                     </div>
                     <div class="cert-time">Feb 2025</div>
                 </div>
+
+                <div class="cert-row">
+                    <div class="cert-left">
+                        <div class="cert-icon-box"><i class="fa-brands fa-line"></i></div>
+                        <div>
+                            <h4>LINE Official Account (LINE OA) Strategy for Business Growth</h4>
+                            <p>MBS, Mahasarakham University • การบริหารจัดการ CRM, การตลาดดิจิทัล และฟีเจอร์ธุรกิจบน LINE OA</p>
+                        </div>
+                    </div>
+                    <div class="cert-time">Dec 2024</div>
+                </div>
+
             </div>
         </section>
 
@@ -525,26 +561,25 @@
             <div class="footer-socials">
                 <a href="mailto:atchananyap@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="https://atchananya.github.io/Atchananya/" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR POPUP MODAL (ส่วนควบคุมการเปิด-ปิด POPUP) -->
+    <!-- JAVASCRIPT FOR POPUP MODAL -->
     <script>
         function openModal() {
             var modal = document.getElementById("resumeModal");
             modal.classList.add("show");
-            document.body.style.overflow = "hidden"; // ป้องกันไม่ให้แผ่นหลังสกอร์ลได้เวลามี Pop-up
+            document.body.style.overflow = "hidden";
         }
 
         function closeModal() {
             var modal = document.getElementById("resumeModal");
             modal.classList.remove("show");
-            document.body.style.overflow = "auto"; // เปิดให้สกอร์ลได้ตามปกติ
+            document.body.style.overflow = "auto";
         }
 
-        // ปิด Modal เมื่อกดปุ่ม ESC
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape") {
                 closeModal();
