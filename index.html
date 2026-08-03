@@ -17,15 +17,15 @@
            PREMIUM HIGH-TECH DATA PINK THEME (DATA ANALYTICS FOCUSED)
            ========================================================================= */
         :root {
-            --bg-canvas:      #FAF6F8;   /* พื้นหลังสว่าง สะอาด ตาไม่ล้า */
-            --bg-card:        #FFFFFF;   /* การ์ดสีขาวตัดขอบชัดเจน */
-            --rose-primary:   #E34A7B;   /* ชมพูสดใสสไตล์ Tech/Data Visual */
-            --rose-dark:      #8F2648;   /* ชมพูเข้มลุ่มลึกสำหรับ Text / Headers */
-            --rose-light:     #FFF0F5;   /* ชมพูพาสเทลสำหรับตารางหรือ UI Elements */
-            --ink-main:       #1E191B;   /* เทาเข้มเกือบดำ อ่านง่ายเป็นทางการ */
-            --ink-muted:      #5C5054;   /* เทาอมชมพูสำหรับคำอธิบาย */
-            --border-color:   #E8D5DA;   /* เส้นขอบบางสไตล์ Grid Line */
-            --grid-line:      rgba(227, 74, 123, 0.04); /* ลายตาราง Matrix Data ด้านหลัง */
+            --bg-canvas:      #FAF6F8;   
+            --bg-card:        #FFFFFF;   
+            --rose-primary:   #E34A7B;   
+            --rose-dark:      #8F2648;   
+            --rose-light:     #FFF0F5;   
+            --ink-main:       #1E191B;   
+            --ink-muted:      #5C5054;   
+            --border-color:   #E8D5DA;   
+            --grid-line:      rgba(227, 74, 123, 0.04); 
             
             --font-display:  'Space Grotesk', -apple-system, sans-serif;
             --font-body:     'Plus Jakarta Sans', 'Sarabun', sans-serif;
@@ -38,7 +38,7 @@
             background-image: 
                 linear-gradient(var(--grid-line) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-            background-size: 30px 30px; /* สร้าง Pattern ตารางจำลองกราฟด้านหลัง */
+            background-size: 30px 30px; 
             color: var(--ink-main); 
             font-family: var(--font-body); 
             -webkit-font-smoothing: antialiased; 
@@ -74,7 +74,7 @@
         .hero-bio { color: var(--ink-muted); font-size: 1.05rem; max-width: 680px; margin-bottom: 2.5rem; text-align: justify; line-height: 1.7; }
         
         .hero-cta-group { display: flex; gap: 1rem; }
-        .btn-primary { background-color: var(--rose-primary); color: white; padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(227, 74, 123, 0.3); transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background-color: var(--rose-primary); color: white; padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(227, 74, 123, 0.3); transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; border: none; cursor: pointer; }
         .btn-primary:hover { background-color: var(--rose-dark); transform: translateY(-1px); }
         .btn-secondary { border: 1px solid var(--border-color); background: var(--bg-card); color: var(--ink-main); padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
         .btn-secondary:hover { background: var(--rose-light); border-color: var(--rose-primary); }
@@ -153,6 +153,63 @@
         .edu-gpa-lbl { font-size: 0.75rem; color: var(--ink-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
 
         /* ==========================================================================
+           MODAL POPUP STYLES (ส่วนที่เพิ่มใหม่)
+           ========================================================================== */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.75); 
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+            z-index: 1001;
+        }
+
+        .close-btn:hover {
+            color: var(--rose-primary);
+        }
+
+        /* ==========================================================================
            FOOTER SECTION
            ========================================================================== */
         footer { background: var(--bg-card); border-top: 1px solid var(--border-color); padding: 3rem 0; font-size: 0.9rem; color: var(--ink-muted); }
@@ -220,7 +277,8 @@
                         สวัสดีค่ะ ดิฉันนางสาวอัชนัญญา ปิตะแสง ชื่อเล่นนีน นิสิตชั้นปีที่ 4 สาขาธุรกิจดิจิทัลและระบบสารสนเทศ (Digital Business and Information Systems) คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม มีความสนใจและเชี่ยวชาญด้านการจัดการโครงสร้างข้อมูลด้วย SQL, การทำ Data Cleansing & Transformation และแปลงข้อมูลดิบให้เป็นหน้าต่างเชิงกลยุทธ์ผ่าน Data Visualization มุ่งมั่นที่จะใช้กระบวนการทางวิทยาศาสตร์ข้อมูลเพื่อขับเคลื่อนการตัดสินใจที่แม่นยำให้กับองค์กร
                     </p>
                     <div class="hero-cta-group">
-                       <a href="images/Atchananya.CSV.png" target="_blank" class="btn-primary"><i class="fa-solid fa-file-image"></i> View Resume</a>
+                        <!-- ปุ่มกดเปิด POPUP -->
+                        <button class="btn-primary" onclick="openModal()"><i class="fa-solid fa-file-image"></i> View Resume</button>
                         <a href="#projects" class="btn-secondary">Explore Projects</a>
                     </div>
                 </div>
@@ -233,6 +291,12 @@
         </div>
     </header>
 
+    <!-- POPUP MODAL (ส่วนโชว์รูปภาพ RESUME) -->
+    <div id="resumeModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" src="images/Atchananya.CSV.png" alt="Resume Atchananya" onclick="event.stopPropagation()">
+    </div>
+
     <!-- MAIN BODY SECTIONS -->
     <div class="global-wrapper">
         
@@ -243,19 +307,16 @@
                 <h2 class="section-title">Data Analytics Expertise</h2>
             </div>
             <div class="expertise-grid">
-                <!-- CARD 1 -->
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <h3>Data Exploratory & Analytics</h3>
                     <p>สกัด คัดกรอง และทำความสะอาดข้อมูลดิบ (Data Cleansing) เพื่อแปลงโครงสร้างข้อมูลตามกรอบมาตรฐาน CRISP-DM สำหรับค้นหาความสัมพันธ์เชิงลึกทางสถิติที่ซ่อนอยู่</p>
                 </div>
-                <!-- CARD 2 -->
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                     <h3>BI & Data Visualization</h3>
                     <p>ออกแบบและพัฒนา Interactive Dashboard ที่ซับซ้อนให้เข้าใจง่าย เพื่อสนับสนุนการตัดสินใจของผู้บริหาร (Executive Insights) พร้อมวางระบบ Workflow อัตโนมัติ</p>
                 </div>
-                <!-- CARD 3 -->
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-server"></i></div>
                     <h3>Database Modeling & SQL</h3>
@@ -314,7 +375,6 @@
             </div>
             <div class="project-list">
                 
-                <!-- PROJECT 1 -->
                 <div class="project-card">
                     <div class="project-main-content">
                         <div class="project-meta">
@@ -341,7 +401,6 @@
                     </div>
                 </div>
 
-                <!-- PROJECT 2 -->
                 <div class="project-card">
                     <div class="project-main-content">
                         <div class="project-meta">
@@ -470,6 +529,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- JAVASCRIPT FOR POPUP MODAL (ส่วนควบคุมการเปิด-ปิด POPUP) -->
+    <script>
+        function openModal() {
+            var modal = document.getElementById("resumeModal");
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden"; // ป้องกันไม่ให้แผ่นหลังสกอร์ลได้เวลามี Pop-up
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("resumeModal");
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto"; // เปิดให้สกอร์ลได้ตามปกติ
+        }
+
+        // ปิด Modal เมื่อกดปุ่ม ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
