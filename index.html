@@ -32,7 +32,19 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        
+        /* ล็อคไม่ให้หน้าเว็บเลื่อนซ้าย-ขวาเกินขอบหน้าจอ */
+        html, body { 
+            max-width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth; 
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         body { 
             background-color: var(--bg-canvas); 
             background-image: 
@@ -540,27 +552,27 @@
                 </div>
 
                 <!-- CERTIFICATE 5 -->
-                <div class="cert-row" onclick="openCertModal('images/cert5.jpg')" style="cursor: pointer;">
+                <div class="cert-row" onclick="openCertModal('images/ic3.jpg')" style="cursor: pointer;">
                     <div class="cert-left">
-                        <img src="images/cert5.jpg" alt="Certificate 5" class="cert-thumb">
+                        <img src="images/ic3.jpg" alt="IC3 Digital Literacy Certificate" class="cert-thumb">
                         <div>
-                            <h4>ชื่อเกียรติบัตรที่ 5</h4>
-                            <p>ชื่อองค์กรผู้ออกเกียรติบัตร • รายละเอียดโดยย่อของเกียรติบัตร</p>
+                            <h4>IC3 Digital Literacy Certification (GS6 Level 1)</h4>
+                            <p>Certiport (Pearson VUE) • Certified in Technology Basics, Information Management, and Digital Citizenship.</p>
                         </div>
                     </div>
-                    <div class="cert-time">Month Year</div>
+                    <div class="cert-time">Feb 2025</div>
                 </div>
 
                 <!-- CERTIFICATE 6 -->
-                <div class="cert-row" onclick="openCertModal('images/cert6.jpg')" style="cursor: pointer;">
+                <div class="cert-row" onclick="openCertModal('images/line-oa.jpg')" style="cursor: pointer;">
                     <div class="cert-left">
-                        <img src="images/cert6.jpg" alt="Certificate 6" class="cert-thumb">
+                        <img src="images/line-oa.jpg" alt="LINE Official Account Strategy Certificate" class="cert-thumb">
                         <div>
-                            <h4>ชื่อเกียรติบัตรที่ 6</h4>
-                            <p>ชื่อองค์กรผู้ออกเกียรติบัตร • รายละเอียดโดยย่อของเกียรติบัตร</p>
+                            <h4>LINE Official Account (LINE OA) Strategy for Business Growth</h4>
+                            <p>MBS, Mahasarakham University • Trained in CRM management, digital marketing, and LINE OA business features.</p>
                         </div>
                     </div>
-                    <div class="cert-time">Month Year</div>
+                    <div class="cert-time">Dec 2024</div>
                 </div>
 
             </div>
@@ -586,7 +598,7 @@
     <script>
         function openCertModal(imageSrc) {
             const modal = document.getElementById('resumeModal');
-            const modalImg = document.getElementById('modalImg');
+            modalImg = document.getElementById('modalImg');
             modalImg.src = imageSrc;
             modal.classList.add('show');
         }
