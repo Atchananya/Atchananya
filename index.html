@@ -14,22 +14,26 @@
 
     <style>
         /* ==========================================================================
-           PASTEL PINK & LAVENDER THEME
+           SOFT PASTEL & CLEAN SLATE THEME (สบายตา ละมุน + MICRO-INTERACTIONS)
            ========================================================================= */
         :root {
-            --bg-canvas:      linear-gradient(135deg, #FFF0F5 0%, #F3E8FF 50%, #FAF5FF 100%); 
-            --bg-card:        rgba(255, 255, 255, 0.85);   
-            --bg-card-hover:  #FFFFFF;
-            --pink-accent:    #D6336C;   
-            --purple-accent:  #8B5CF6;   
-            --text-main:      #1F2937;   
-            --text-muted:     #4B5563;   
-            --border-color:   #F3E8FF;   
-            --border-hover:   #E9D5FF;
-            --shadow-subtle:  0 4px 20px rgba(139, 92, 246, 0.05);
-            --shadow-hover:   0 10px 25px rgba(214, 51, 108, 0.1);
+            --bg-canvas:       #FAF9F6;  /* พื้นหลัง Off-white ครีมอ่อน สบายตา */
+            --bg-card:         #FFFFFF;  
+            --bg-card-hover:   #FFFFFF;
             
-            --font-main:     'Inter', 'Sarabun', -apple-system, sans-serif;
+            --pink-accent:     #C9708B;  /* ชมพูนู้ดหม่น นุ่มนวล */
+            --purple-accent:   #7C6A96;  /* ม่วงพาสเทลหม่น สุขุม */
+            
+            --text-main:       #2D3748;  /* เทา Slate เข้ม แทนสีดำสนิท ลดความล้าสายตา */
+            --text-muted:      #64748B;  /* เทา Slate อ่อน */
+            
+            --border-color:    #E2E8F0;  
+            --border-hover:    #CBD5E1;
+            
+            --shadow-subtle:   0 4px 15px rgba(0, 0, 0, 0.03); 
+            --shadow-hover:    0 12px 28px rgba(124, 106, 150, 0.12);
+            
+            --font-main:       'Inter', 'Sarabun', -apple-system, sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,14 +44,10 @@
             scroll-behavior: smooth; 
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+        img { max-width: 100%; height: auto; }
 
         body { 
             background: var(--bg-canvas); 
-            background-attachment: fixed;
             color: var(--text-main); 
             font-family: var(--font-main); 
             -webkit-font-smoothing: antialiased; 
@@ -62,9 +62,9 @@
            TOP BADGE & NAV BAR
            ========================================================================== */
         .status-badge-bar { 
-            background: rgba(255, 240, 245, 0.8); 
+            background: #F4E8EC; 
             backdrop-filter: blur(8px);
-            border-bottom: 1px solid #FCE7F3; 
+            border-bottom: 1px solid var(--border-color); 
             padding: 0.6rem 0; 
             text-align: center; 
         }
@@ -82,28 +82,29 @@
             background-color: #10B981; 
             border-radius: 50%; 
             display: inline-block; 
-            animation: pulse 2s infinite; 
+            animation: pulse 2s infinite ease-in-out; 
         }
         @keyframes pulse { 
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); } 
-            70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); } 
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } 
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); transform: scale(0.95); } 
+            70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); transform: scale(1.05); } 
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); transform: scale(0.95); } 
         }
 
         nav { 
-            background: rgba(255, 255, 255, 0.75); 
+            background: rgba(250, 249, 246, 0.85); 
             backdrop-filter: blur(12px); 
             position: sticky; 
             top: 0; 
             z-index: 100; 
             border-bottom: 1px solid var(--border-color); 
+            transition: all 0.3s ease;
         }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 65px; }
         .nav-logo { font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.5rem; }
         .nav-logo i { color: var(--pink-accent); }
         .nav-links { display: flex; gap: 1.8rem; list-style: none; font-size: 0.88rem; font-weight: 500; color: var(--text-muted); }
-        .nav-links a { transition: color 0.2s; }
-        .nav-links a:hover { color: var(--purple-accent); }
+        .nav-links a { transition: color 0.2s ease, transform 0.2s ease; display: inline-block; }
+        .nav-links a:hover { color: var(--purple-accent); transform: translateY(-1px); }
 
         /* ==========================================================================
            HERO SECTION
@@ -123,31 +124,30 @@
         .btn-primary { 
             background: linear-gradient(135deg, var(--pink-accent), var(--purple-accent)); 
             color: white; 
-            padding: 0.7rem 1.5rem; 
+            padding: 0.75rem 1.6rem; 
             border-radius: 8px; 
             font-weight: 600; 
             font-size: 0.9rem; 
-            transition: all 0.2s; 
+            transition: all 0.3s ease; 
             display: inline-flex; 
             align-items: center; 
             gap: 0.5rem; 
             border: none; 
             cursor: pointer; 
-            box-shadow: 0 4px 12px rgba(214, 51, 108, 0.2);
+            box-shadow: 0 4px 12px rgba(201, 112, 139, 0.2);
         }
-        .btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+        .btn-primary:hover { opacity: 0.95; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(201, 112, 139, 0.3); }
         .btn-secondary { 
-            border: 1px solid var(--border-hover); 
+            border: 1px solid var(--border-color); 
             background: var(--bg-card); 
             color: var(--text-main); 
-            padding: 0.7rem 1.5rem; 
+            padding: 0.75rem 1.6rem; 
             border-radius: 8px; 
             font-weight: 600; 
             font-size: 0.9rem; 
-            transition: all 0.2s; 
-            backdrop-filter: blur(4px);
+            transition: all 0.3s ease; 
         }
-        .btn-secondary:hover { background: #FFFFFF; border-color: var(--purple-accent); }
+        .btn-secondary:hover { background: #FFFFFF; border-color: var(--purple-accent); color: var(--purple-accent); transform: translateY(-2px); }
 
         .profile-container-wrapper { position: relative; }
         .profile-img-container { 
@@ -156,8 +156,10 @@
             border-radius: 50%; 
             overflow: hidden; 
             border: 4px solid #FFF; 
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15); 
+            box-shadow: 0 10px 25px rgba(124, 106, 150, 0.15); 
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
+        .profile-img-container:hover { transform: scale(1.03) rotate(1deg); box-shadow: 0 14px 30px rgba(124, 106, 150, 0.22); }
         .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
         /* ==========================================================================
@@ -174,37 +176,53 @@
             background: var(--bg-card); 
             border: 1px solid var(--border-color); 
             padding: 2rem; 
-            border-radius: 12px; 
+            border-radius: 14px; 
             box-shadow: var(--shadow-subtle); 
-            backdrop-filter: blur(8px);
-            transition: all 0.2s ease; 
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); 
         }
-        .expertise-card:hover { transform: translateY(-3px); background: var(--bg-card-hover); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
-        .exp-icon { font-size: 1.4rem; color: var(--purple-accent); margin-bottom: 1rem; background: #F3E8FF; width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .expertise-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+        .exp-icon { font-size: 1.3rem; color: var(--purple-accent); margin-bottom: 1.2rem; background: #F3E8FF; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .expertise-card:hover .exp-icon { background: var(--purple-accent); color: #FFF; transform: scale(1.08); }
         .expertise-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--text-main); }
         .expertise-card p { color: var(--text-muted); font-size: 0.9rem; text-align: justify; }
 
         /* SKILLS METRIC */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
-        .skill-group-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow-subtle); backdrop-filter: blur(8px); }
+        .skill-group-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 14px; box-shadow: var(--shadow-subtle); transition: all 0.3s ease; }
+        .skill-group-box:hover { border-color: var(--border-hover); box-shadow: var(--shadow-hover); }
         .skill-group-box h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
         .skill-group-box h4 i { color: var(--pink-accent); }
         .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .skill-tag { background: #FFFFFF; color: var(--text-main); padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.82rem; font-weight: 500; border: 1px solid #F3E8FF; transition: all 0.2s; }
-        .skill-tag:hover { background: #FFF0F5; border-color: #FCE7F3; color: var(--pink-accent); }
+        
+        .skill-tag { 
+            background: #FAF9F6; 
+            color: var(--text-main); 
+            padding: 0.4rem 0.8rem; 
+            border-radius: 8px; 
+            font-size: 0.82rem; 
+            font-weight: 500; 
+            border: 1px solid var(--border-color); 
+            transition: all 0.25s ease; 
+            cursor: default;
+        }
+        .skill-tag:hover { 
+            background: #F4E8EC; 
+            border-color: #E2E8F0; 
+            color: var(--pink-accent); 
+            transform: translateY(-2px);
+        }
 
-        /* PROJECTS (BALANCED & CLEAN) */
+        /* PROJECTS */
         .project-list { display: flex; flex-direction: column; gap: 2rem; }
         .project-card { 
             background: var(--bg-card); 
             border: 1px solid var(--border-color); 
-            border-radius: 14px; 
+            border-radius: 16px; 
             padding: 2rem; 
             box-shadow: var(--shadow-subtle); 
-            backdrop-filter: blur(8px);
-            transition: all 0.2s ease; 
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); 
         }
-        .project-card:hover { background: var(--bg-card-hover); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+        .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
         
         .project-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
         .project-meta h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-main); line-height: 1.3; }
@@ -218,11 +236,11 @@
         .project-bullets li::before { content: "•"; position: absolute; left: 0; color: var(--purple-accent); font-weight: bold; font-size: 1.1rem; }
         
         .project-right-pane { display: flex; flex-direction: column; gap: 1rem; }
-        .project-image-box { width: 100%; height: 115px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; }
-        .project-image-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-        .project-image-box:hover img { transform: scale(1.05); }
+        .project-image-box { width: 100%; height: 115px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; }
+        .project-image-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .project-image-box:hover img { transform: scale(1.08); }
 
-        .project-metric-box { background: #FFF0F5; border: 1px solid #FCE7F3; padding: 1rem; border-radius: 10px; text-align: center; }
+        .project-metric-box { background: #F4E8EC; border: 1px solid var(--border-color); padding: 1rem; border-radius: 12px; text-align: center; }
         .project-metric-val { font-size: 1.4rem; font-weight: 700; color: var(--pink-accent); line-height: 1.1; }
         .project-metric-lbl { font-size: 0.75rem; color: var(--purple-accent); font-weight: 600; margin-top: 0.25rem; }
 
@@ -232,15 +250,14 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 1rem 1.5rem; 
+            padding: 1.1rem 1.5rem; 
             background: var(--bg-card); 
             border: 1px solid var(--border-color); 
-            border-radius: 10px; 
+            border-radius: 12px; 
             box-shadow: var(--shadow-subtle); 
-            backdrop-filter: blur(8px);
-            transition: all 0.2s ease; 
+            transition: all 0.3s ease; 
         }
-        .cert-row:hover { background: var(--bg-card-hover); border-color: var(--purple-accent); box-shadow: var(--shadow-hover); }
+        .cert-row:hover { transform: translateX(5px); background: var(--bg-card-hover); border-color: var(--purple-accent); box-shadow: var(--shadow-hover); }
         .cert-left { display: flex; align-items: center; gap: 1rem; }
         
         .cert-thumb { 
@@ -259,9 +276,11 @@
 
         /* GALLERY AS PORTFOLIO VISUALS */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-        .gallery-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-subtle); backdrop-filter: blur(8px); }
-        .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
-        .gallery-caption { padding: 0.8rem; font-size: 0.85rem; color: var(--text-main); font-weight: 500; text-align: center; border-top: 1px solid var(--border-color); background: rgba(255,255,255,0.6); }
+        .gallery-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-subtle); transition: all 0.3s ease; }
+        .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+        .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-caption { padding: 0.8rem; font-size: 0.85rem; color: var(--text-main); font-weight: 500; text-align: center; border-top: 1px solid var(--border-color); background: #FAF9F6; }
 
         /* EDUCATION BOX */
         .edu-box { padding: 1.8rem 2rem !important; display: flex !important; justify-content: space-between; align-items: center; }
@@ -275,56 +294,39 @@
             display: none; 
             position: fixed; 
             z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
+            left: 0; top: 0;
+            width: 100%; height: 100%; 
             overflow: auto; 
-            background-color: rgba(31, 41, 55, 0.6); 
-            backdrop-filter: blur(6px);
-            align-items: center;
-            justify-content: center;
+            background-color: rgba(30, 41, 59, 0.5); 
+            backdrop-filter: blur(8px);
+            align-items: center; justify-content: center;
             opacity: 0;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.3s ease;
         }
 
-        .modal.show {
-            display: flex;
-            opacity: 1;
-        }
-
+        .modal.show { display: flex; opacity: 1; }
         .modal-content {
             margin: auto;
             display: block;
-            max-width: 90%;
-            max-height: 90vh;
+            max-width: 90%; max-height: 90vh;
             border-radius: 12px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
             object-fit: contain;
         }
-
         .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
+            position: absolute; top: 20px; right: 30px;
+            color: #fff; font-size: 35px; font-weight: bold;
+            cursor: pointer; z-index: 1001;
         }
 
-        /* ==========================================================================
-           FOOTER SECTION
-           ========================================================================== */
-        footer { background: rgba(255, 255, 255, 0.8); border-top: 1px solid var(--border-color); padding: 2.5rem 0; font-size: 0.85rem; color: var(--text-muted); backdrop-filter: blur(8px); }
+        /* FOOTER SECTION */
+        footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding: 2.5rem 0; font-size: 0.85rem; color: var(--text-muted); }
         .footer-flex { display: flex; justify-content: space-between; align-items: center; }
         .footer-socials { display: flex; gap: 1.25rem; font-size: 1.1rem; }
-        .footer-socials a:hover { color: var(--pink-accent); }
+        .footer-socials a { transition: color 0.2s, transform 0.2s; }
+        .footer-socials a:hover { color: var(--pink-accent); transform: translateY(-2px); }
 
-        /* ==========================================================================
-           MOBILE RESPONSIVE
-           ========================================================================== */
+        /* MOBILE RESPONSIVE */
         @media (max-width: 850px) {
             .hero-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; justify-items: center; }
             .hero-bio { text-align: center; }
@@ -332,6 +334,7 @@
             .expertise-grid { grid-template-columns: 1fr; }
             .project-body { grid-template-columns: 1fr; gap: 1.5rem; }
             .cert-row { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .cert-row:hover { transform: none; }
             .nav-links { display: none; }
             .footer-flex { flex-direction: column; gap: 1.25rem; text-align: center; }
             .edu-box { flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -468,8 +471,7 @@
             </div>
         </section>
 
-        <!-- FEATURED PROJECTS / EXPERIENCES -->
-       <!-- FEATURED PROJECTS / EXPERIENCES -->
+        <!-- FEATURED PROJECTS -->
         <section id="projects">
             <div class="section-header">
                 <span class="section-tag">Data Case Studies</span>
@@ -494,7 +496,7 @@
                                 <li>พัฒนา อบรม และประเมินประสิทธิภาพโมเดลพยากรณ์ข้อมูลเทียบกัน 3 รูปแบบ: Random Forest, Neural Network และ Linear Regression</li>
                                 <li>โมเดล Random Forest ประสบความสำเร็จสูงสุดในการทดสอบวัดเกณฑ์ด้วยค่าสัมประสิทธิ์การตัดสินใจคัดกรองข้ามกลุ่ม (Cross-Validation)</li>
                             </ul>
-                            <div class="project-tags">
+                            <div class="project-tags tag-cloud">
                                 <span class="skill-tag">Python</span>
                                 <span class="skill-tag">Altair AI Studio</span>
                                 <span class="skill-tag">Machine Learning</span>
@@ -527,7 +529,7 @@
                                 <li>ควบคุมความถูกต้องของชุดข้อมูลคำสั่งซื้อและระยะเวลาการทำงานของพาร์ทเนอร์แพลตฟอร์มฟู้ดเดลิเวอรี่</li>
                                 <li>จัดทำระบบบันทึก ตรวจสอบยอดสต็อกคงคลังดิบรายวัน เพื่อนำไปวิเคราะห์และหาจุดลดอัตราการสูญเสียของวัตถุดิบ (Waste Reduction Analytics)</li>
                             </ul>
-                            <div class="project-tags">
+                            <div class="project-tags tag-cloud">
                                 <span class="skill-tag">POS Systems</span>
                                 <span class="skill-tag">Inventory Control</span>
                                 <span class="skill-tag">Operations Analytics</span>
@@ -535,7 +537,6 @@
                         </div>
 
                         <div class="project-right-pane">
-                            <!-- Image Box Only -->
                             <div class="project-image-box" style="height: 100%; min-height: 140px;" onclick="openCertModal('images/Freelance.jpeg')">
                                 <img src="images/Freelance.jpeg" alt="Freelance Experience Work">
                             </div>
@@ -615,58 +616,10 @@
                         <img src="images/msu.png" alt="MSU English Exit Examination Certificate" class="cert-thumb">
                         <div>
                             <h4>MSU English Exit Examination (CEFR B1)</h4>
-                            <p>Mahasarakham University • ผลการทดสอบวัดระดับความสามารถด้านภาษาอังกฤษมาตรฐานสากล</p>
+                            <p>Mahasarakham University</p>
                         </div>
                     </div>
-                    <div class="cert-time">Feb 2026</div>
-                </div>
-
-                <!-- CERTIFICATE 3 -->
-                <div class="cert-row" onclick="openCertModal('images/6034_page-0001.jpg')" style="cursor: pointer;">
-                    <div class="cert-left">
-                        <img src="images/6034_page-0001.jpg" alt="Gemini Certified Educator Certificate" class="cert-thumb">
-                        <div>
-                            <h4>Gemini Certified Educator</h4>
-                            <p>Google for Education • ขีดความสามารถด้าน AI literacy, workflow optimization, และการสร้างคอนเทนต์ด้วย Gemini AI</p>
-                        </div>
-                    </div>
-                    <div class="cert-time">Feb 2026</div>
-                </div>
-
-                <!-- CERTIFICATE 4 -->
-                <div class="cert-row" onclick="openCertModal('images/Certificate-MS02-TH_page-0001.jpg')" style="cursor: pointer;">
-                    <div class="cert-left">
-                        <img src="images/Certificate-MS02-TH_page-0001.jpg" alt="Microsoft Certification" class="cert-thumb">
-                        <div>
-                            <h4>Microsoft Power BI Training Certificate</h4>
-                            <p>Thailand Professional Qualification Institute (TPQI) • การฝึกอบรมทักษะการสร้าง Interactive Dashboard และ Data Visualization</p>
-                        </div>
-                    </div>
-                    <div class="cert-time">Aug 2025</div>
-                </div>
-
-                <!-- CERTIFICATE 5 -->
-                <div class="cert-row" onclick="openCertModal('images/ic3.jpg')" style="cursor: pointer;">
-                    <div class="cert-left">
-                        <img src="images/ic3.jpg" alt="IC3 Digital Literacy Certificate" class="cert-thumb">
-                        <div>
-                            <h4>IC3 Digital Literacy Certification (GS6 Level 1)</h4>
-                            <p>Certiport (Pearson VUE) • Certified in Technology Basics, Information Management, and Digital Citizenship.</p>
-                        </div>
-                    </div>
-                    <div class="cert-time">Feb 2025</div>
-                </div>
-
-                <!-- CERTIFICATE 6 -->
-                <div class="cert-row" onclick="openCertModal('images/line-oa.jpg')" style="cursor: pointer;">
-                    <div class="cert-left">
-                        <img src="images/line-oa.jpg" alt="LINE Official Account Strategy Certificate" class="cert-thumb">
-                        <div>
-                            <h4>LINE Official Account (LINE OA) Strategy for Business Growth</h4>
-                            <p>MBS, Mahasarakham University • Trained in CRM management, digital marketing, and LINE OA business features.</p>
-                        </div>
-                    </div>
-                    <div class="cert-time">Dec 2024</div>
+                    <div class="cert-time">2026</div>
                 </div>
 
             </div>
@@ -674,32 +627,32 @@
 
     </div>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer>
         <div class="global-wrapper footer-flex">
-            <div>
-                <p>&copy; 2026 Atchananya Pitasaeng. All rights reserved.</p>
-            </div>
+            <div>© 2026 Atchananya Pitasaeng. All rights reserved.</div>
             <div class="footer-socials">
-                <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR MODAL FUNCTIONALITY -->
+    <!-- JAVASCRIPT FOR MODAL -->
     <script>
         function openCertModal(imageSrc) {
             const modal = document.getElementById('resumeModal');
             const modalImg = document.getElementById('modalImg');
             modalImg.src = imageSrc;
-            modal.classList.add('show');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('show'); }, 10);
         }
 
         function closeModal() {
             const modal = document.getElementById('resumeModal');
             modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
         }
     </script>
 </body>
