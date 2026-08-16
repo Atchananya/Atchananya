@@ -106,9 +106,7 @@ nav {
 .nav-links a { transition: color 0.2s ease, transform 0.2s ease; display: inline-block; }
 .nav-links a:hover { color: var(--purple-accent); transform: translateY(-1px); }
 
-/* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
+/* HERO SECTION */
 .hero-section { padding: 4.5rem 0 3.5rem 0; }
 .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 3.5rem; align-items: center; }
 .hero-info h1 { font-size: 3rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 0.8rem; color: var(--text-main); }
@@ -162,9 +160,7 @@ nav {
 .profile-img-container:hover { transform: scale(1.03) rotate(1deg); box-shadow: 0 14px 30px rgba(124, 106, 150, 0.22); }
 .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ==========================================================================
-   SECTION CORE LAYOUT
-   ========================================================================== */
+/* SECTION CORE LAYOUT */
 section { padding: 4rem 0; }
 .section-header { margin-bottom: 2.5rem; }
 .section-tag { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--pink-accent); font-weight: 700; margin-bottom: 0.3rem; display: block; }
@@ -245,7 +241,7 @@ section { padding: 4rem 0; }
 .project-metric-lbl { font-size: 0.75rem; color: var(--purple-accent); font-weight: 600; margin-top: 0.25rem; }
 
 /* ==========================================================================
-   ACTIVITIES SLIDER
+   ACTIVITIES SLIDER & EXTRA IMAGE BADGE
    ========================================================================== */
 .act-slider-wrapper { position: relative; display: flex; align-items: center; }
 .act-slider-track { display: flex; gap: 1.25rem; overflow-x: auto; scroll-behavior: smooth; padding: 0.5rem 0.2rem; scrollbar-width: none; }
@@ -261,16 +257,35 @@ section { padding: 4rem 0; }
     box-shadow: var(--shadow-subtle); 
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); 
     cursor: pointer; 
+    display: flex;
+    flex-direction: column;
 }
 .act-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--purple-accent); }
 .act-thumb { position: relative; height: 170px; overflow: hidden; background: #F4E8EC; }
 .act-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .act-card:hover .act-thumb img { transform: scale(1.06); }
-.act-img-count { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.65); color: #fff; font-size: 0.75rem; padding: 3px 8px; border-radius: 12px; backdrop-filter: blur(4px); font-weight: 500; }
-.act-card-body { padding: 1.2rem; }
+
+.act-card-body { padding: 1.2rem; display: flex; flex-direction: column; flex-grow: 1; }
 .act-date-tag { font-size: 0.75rem; color: var(--pink-accent); font-weight: 600; text-transform: uppercase; margin-bottom: 0.3rem; display: block; }
 .act-card-title { font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.35; }
-.act-card-desc { font-size: 0.85rem; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
+.act-card-desc { font-size: 0.85rem; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; margin-bottom: 1rem; }
+
+/* Mini Tag สำหรับกล่องรูปภาพเพิ่มเติม */
+.act-extra-box {
+    margin-top: auto;
+    background: #FAF5F7;
+    border: 1px dashed var(--pink-accent);
+    border-radius: 8px;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.78rem;
+    color: var(--purple-accent);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.act-extra-box span { display: flex; align-items: center; gap: 0.4rem; }
+.act-extra-box i { color: var(--pink-accent); }
 
 .act-nav-btn { 
     position: absolute; top: 50%; transform: translateY(-50%); 
@@ -343,111 +358,7 @@ section { padding: 4rem 0; }
 .cert-time { font-size: 0.82rem; color: var(--purple-accent); font-weight: 600; white-space: nowrap; }
 
 /* ==========================================================================
-   NEW PHOTO GALLERY SECTION STYLES
-   ========================================================================== */
-.photo-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.photo-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: var(--shadow-subtle);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    cursor: pointer;
-}
-
-.photo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--purple-accent);
-}
-
-.photo-card-img-wrapper {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    background-color: #F4E8EC;
-}
-
-.photo-card-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.photo-card:hover .photo-card-img-wrapper img {
-    transform: scale(1.08);
-}
-
-.photo-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(124, 106, 150, 0.3);
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease;
-}
-
-.photo-card-overlay i {
-    color: #FFFFFF;
-    font-size: 1.5rem;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.8rem;
-    border-radius: 50%;
-    backdrop-filter: blur(4px);
-}
-
-.photo-card:hover .photo-card-overlay {
-    opacity: 1;
-}
-
-.photo-card-info {
-    padding: 1.2rem;
-}
-
-.photo-card-category {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--pink-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
-    display: block;
-}
-
-.photo-card-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 0.4rem;
-    line-height: 1.35;
-}
-
-.photo-card-desc {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-/* GALLERY / VISUALS */
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-.gallery-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-subtle); transition: all 0.3s ease; cursor: pointer; }
-.gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-.gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform 0.4s ease; }
-.gallery-item:hover img { transform: scale(1.05); }
-.gallery-caption { padding: 0.8rem; font-size: 0.85rem; color: var(--text-main); font-weight: 500; text-align: center; border-top: 1px solid var(--border-color); background: #FAF9F6; }
-
-/* ==========================================================================
-   MODAL POPUP STYLES
+   MODAL POPUP STYLES (SINGLE IMAGE & DETAILED ACTIVITY)
    ========================================================================== */
 .modal {
     display: none; 
@@ -456,7 +367,7 @@ section { padding: 4rem 0; }
     left: 0; top: 0;
     width: 100%; height: 100%; 
     overflow: auto; 
-    background-color: rgba(30, 41, 59, 0.55); 
+    background-color: rgba(30, 41, 59, 0.65); 
     backdrop-filter: blur(8px);
     align-items: center; justify-content: center;
     opacity: 0;
@@ -479,25 +390,79 @@ section { padding: 4rem 0; }
 }
 .close-btn:hover { color: var(--pink-accent); }
 
-/* Activity Detailed Modal Specifics */
+/* Activity Detailed Pop-Up */
 .act-modal-container {
     background: #FFF;
-    border-radius: 16px;
+    border-radius: 18px;
     width: 90%;
     max-width: 720px;
-    max-height: 85vh;
+    max-height: 88vh;
     overflow-y: auto;
     padding: 2rem;
     position: relative;
     box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
 }
-.act-modal-header { margin-bottom: 1rem; padding-right: 2rem; }
-.act-modal-title { font-size: 1.35rem; font-weight: 700; color: var(--text-main); }
-.act-modal-date { font-size: 0.85rem; color: var(--pink-accent); font-weight: 600; margin-top: 0.2rem; }
-.act-modal-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; text-align: justify; }
-.act-modal-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-.act-modal-gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color); }
-.act-close-btn { position: absolute; top: 18px; right: 22px; font-size: 1.8rem; color: var(--text-muted); cursor: pointer; transition: color 0.2s; }
+.act-modal-header { margin-bottom: 1rem; padding-right: 2.5rem; }
+.act-modal-title { font-size: 1.35rem; font-weight: 700; color: var(--text-main); line-height: 1.3; }
+.act-modal-date { font-size: 0.85rem; color: var(--pink-accent); font-weight: 600; margin-top: 0.3rem; }
+.act-modal-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; text-align: justify; }
+
+/* Pop-up Image Viewer Main & Extra Thumbnails */
+.act-modal-hero-img {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1E293B;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+.act-modal-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.act-modal-thumbs-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.act-modal-thumbs {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+.act-modal-thumb-item {
+    width: 90px;
+    height: 65px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.act-modal-thumb-item.active {
+    border-color: var(--pink-accent);
+    transform: scale(1.03);
+}
+.act-modal-thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.act-close-btn { 
+    position: absolute; top: 18px; right: 22px; 
+    font-size: 1.8rem; color: var(--text-muted); 
+    cursor: pointer; transition: color 0.2s; 
+}
 .act-close-btn:hover { color: var(--pink-accent); }
 
 /* FOOTER SECTION */
@@ -522,7 +487,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
     .act-card { flex: 0 0 85%; }
     .act-prev { left: 5px; }
     .act-next { right: 5px; }
-    .photo-gallery-grid { grid-template-columns: 1fr; }
+    .act-modal-hero-img { height: 220px; }
 }
     </style>
 </head>
@@ -547,10 +512,9 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#activities">Activities</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#photo-gallery">Gallery</a></li>
-                <li><a href="#gallery">Visualizations</a></li>
             </ul>
         </div>
     </nav>
@@ -568,7 +532,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                         สวัสดีค่ะ ดิฉันนางสาวอัชนัญญา ปิตะแสง (นีน) นิสิตชั้นปีที่ 4 สาขาธุรกิจดิจิทัลและระบบสารสนเทศ คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม มีความสนใจและเชี่ยวชาญด้านการจัดการโครงสร้างข้อมูลด้วย SQL, การทำ Data Cleansing & Transformation และแปลงข้อมูลดิบให้เป็นหน้าต่างเชิงกลยุทธ์ผ่าน Data Visualization มุ่งมั่นที่จะใช้กระบวนการทางวิทยาศาสตร์ข้อมูลเพื่อขับเคลื่อนการตัดสินใจที่แม่นยำให้กับองค์กร
                     </p>
                     <div class="hero-cta-group">
-                        <button class="btn-primary" onclick="openCertModal('images/Atchananya.CSV.png')"><i class="fa-solid fa-file-image"></i> View Resume</button>
+                        <button class="btn-primary" onclick="openSingleModal('images/Atchananya.CSV.png')"><i class="fa-solid fa-file-image"></i> View Resume</button>
                         <a href="#projects" class="btn-secondary">Explore Projects</a>
                     </div>
                 </div>
@@ -580,12 +544,6 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
             </div>
         </div>
     </header>
-
-    <!-- POPUP MODAL -->
-    <div id="resumeModal" class="modal" onclick="closeModal()">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img id="modalImg" class="modal-content" src="" alt="Preview" onclick="event.stopPropagation()">
-    </div>
 
     <!-- MAIN BODY SECTIONS -->
     <div class="global-wrapper">
@@ -723,7 +681,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                         </div>
 
                         <div class="project-right-pane">
-                            <div class="project-image-box" style="height: 100%; min-height: 140px;" onclick="openCertModal('images/Freelance.jpeg')">
+                            <div class="project-image-box" style="height: 100%; min-height: 140px;" onclick="openSingleModal('images/Freelance.jpeg')">
                                 <img src="images/Freelance.jpeg" alt="Freelance Experience Work" onerror="this.src='https://via.placeholder.com/220x140?text=Dunkin+Work'">
                             </div>
                         </div>
@@ -733,14 +691,14 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
             </div>
         </section>
 
-        <!-- ACTIVITIES / SLIDER SECTION -->
-        <section id="activities">
+        <!-- ACTIVITIES SLIDER SECTION -->
+        <section id="activities" style="margin-bottom: 3rem;">
             <div class="section-header">
                 <span class="section-tag">Engagement & Growth</span>
                 <h2 class="section-title">Activities</h2>
             </div>
 
-            <!-- Activity Slider Wrapper -->
+            <!-- Activity Horizontal Slider Track -->
             <div class="act-slider-wrapper">
                 <button class="act-nav-btn act-prev" onclick="slideActivity(-1)" aria-label="Previous">
                     <i class="fa-solid fa-chevron-left"></i>
@@ -748,81 +706,111 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
 
                 <div class="act-slider-track" id="actSliderTrack">
                     
-                    <!-- 1. Oct 2025 -->
-                    <div class="act-card" onclick="openCertModal('images/1.jpeg')">
+                    <!-- Activity 1 -->
+                    <div class="act-card" onclick="openActivityModal(0)">
                         <div class="act-thumb">
-                            <img src="images/1.jpeg" alt="EduTech for Thailand's Future" onerror="this.src='https://via.placeholder.com/300x200?text=EduTech'">
-                            <span class="act-img-count"><i class="fa-solid fa-images"></i> 2</span>
+                            <img src="images/1.jpeg" alt="สัมมนาวิชาการ EduTech for Thailand's Future" onerror="this.src='https://via.placeholder.com/300x200?text=EduTech'">
                         </div>
                         <div class="act-card-body">
                             <span class="act-date-tag">Oct 2025</span>
                             <h4 class="act-card-title">สัมมนาวิชาการ EduTech for Thailand's Future</h4>
-                            <p class="act-card-desc">เข้าร่วมงานสัมมนาเชิงวิชาการ “EduTech for Thailand’s Future: Empowering Smart Learning...”</p>
+                            <p class="act-card-desc">เข้าร่วมงานสัมมนาเชิงวิชาการ “EduTech for Thailand’s Future: Empowering Smart Learning with Cybersecurity & AI ครั้งที่ 1”...</p>
+                            
+                            <!-- กล่องรูปภาพเพิ่มเติม -->
+                            <div class="act-extra-box">
+                                <span><i class="fa-solid fa-images"></i> รูปภาพเพิ่มเติม</span>
+                                <span style="color: var(--pink-accent);">+1 รูป</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 2. Jul 2025 -->
-                    <div class="act-card" onclick="openCertModal('images/3.jpeg')">
+                    <!-- Activity 2 -->
+                    <div class="act-card" onclick="openActivityModal(1)">
                         <div class="act-thumb">
                             <img src="images/3.jpeg" alt="MBS Fresh Day & Fresh Night 2025" onerror="this.src='https://via.placeholder.com/300x200?text=MBS+Freshy'">
-                            <span class="act-img-count"><i class="fa-solid fa-images"></i> 2</span>
                         </div>
                         <div class="act-card-body">
                             <span class="act-date-tag">Jul 2025</span>
                             <h4 class="act-card-title">MBS Fresh Day & Fresh Night 2025</h4>
-                            <p class="act-card-desc">เข้าร่วมโครงการ MBS Freshy Day Freshy 2025 ในบทบาท Staff รับผิดชอบช่วยดำเนินงาน...</p>
+                            <p class="act-card-desc">เข้าร่วมโครงการ MBS Freshy Day Freshy 2025 ในบทบาท Staff รับผิดชอบช่วยดำเนินงานและจัดเตรียมกิจกรรม...</p>
+                            
+                            <!-- กล่องรูปภาพเพิ่มเติม -->
+                            <div class="act-extra-box">
+                                <span><i class="fa-solid fa-images"></i> รูปภาพเพิ่มเติม</span>
+                                <span style="color: var(--pink-accent);">+1 รูป</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 3. Feb 2025 -->
-                    <div class="act-card" onclick="openCertModal('images/5.jpeg')">
+                    <!-- Activity 3 -->
+                    <div class="act-card" onclick="openActivityModal(2)">
                         <div class="act-thumb">
                             <img src="images/5.jpeg" alt="MBS สำเภาฟ้าเกมส์ 2024" onerror="this.src='https://via.placeholder.com/300x200?text=MBS+Games'">
-                            <span class="act-img-count"><i class="fa-solid fa-images"></i> 3</span>
                         </div>
                         <div class="act-card-body">
                             <span class="act-date-tag">Feb 2025</span>
                             <h4 class="act-card-title">MBS สำเภาฟ้าเกมส์ 2024</h4>
-                            <p class="act-card-desc">เข้าร่วมโครงการ MBS สำเภาฟ้าเกม 2024 ในบทบาท Staff โดยรับผิดชอบดูแลและประสานงาน...</p>
+                            <p class="act-card-desc">เข้าร่วมโครงการ MBS สำเภาฟ้าเกม 2024 ในบทบาท Staff โดยรับผิดชอบดูแลและประสานงานบริเวณแสตนด์...</p>
+                            
+                            <!-- กล่องรูปภาพเพิ่มเติม -->
+                            <div class="act-extra-box">
+                                <span><i class="fa-solid fa-images"></i> รูปภาพเพิ่มเติม</span>
+                                <span style="color: var(--pink-accent);">+2 รูป</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 4. Dec 2024 -->
-                    <div class="act-card" onclick="openCertModal('images/7.jpeg')">
+                    <!-- Activity 4 -->
+                    <div class="act-card" onclick="openActivityModal(3)">
                         <div class="act-thumb">
                             <img src="images/7.jpeg" alt="MSU OpenHouse 2024" onerror="this.src='https://via.placeholder.com/300x200?text=MSU+OpenHouse'">
-                            <span class="act-img-count"><i class="fa-solid fa-images"></i> 3</span>
                         </div>
                         <div class="act-card-body">
                             <span class="act-date-tag">Dec 2024</span>
                             <h4 class="act-card-title">MSU OpenHouse 2024</h4>
-                            <p class="act-card-desc">เข้าร่วมโครงการ MSU Open House 2024 ในบทบาทผู้แนะนำและให้ข้อมูลเกี่ยวกับสาขา...</p>
+                            <p class="act-card-desc">เข้าร่วมโครงการ MSU Open House 2024 ในบทบาทผู้แนะนำและให้ข้อมูลเกี่ยวกับ สาขาธุรกิจดิจิทัลและระบบสารสนเทศ...</p>
+                            
+                            <!-- กล่องรูปภาพเพิ่มเติม -->
+                            <div class="act-extra-box">
+                                <span><i class="fa-solid fa-images"></i> รูปภาพเพิ่มเติม</span>
+                                <span style="color: var(--pink-accent);">+2 รูป</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 5. Dec 2024 -->
-                    <div class="act-card" onclick="openCertModal('images/10.jpg')">
+                    <!-- Activity 5 -->
+                    <div class="act-card" onclick="openActivityModal(4)">
                         <div class="act-thumb">
                             <img src="images/10.jpg" alt="LineOA Sales Growth Strategy" onerror="this.src='https://via.placeholder.com/300x200?text=LineOA+Strategy'">
-                            <span class="act-img-count"><i class="fa-solid fa-images"></i> 2</span>
                         </div>
                         <div class="act-card-body">
                             <span class="act-date-tag">Dec 2024</span>
                             <h4 class="act-card-title">LineOA Sales Growth Strategy</h4>
-                            <p class="act-card-desc">เข้าร่วมการอบรมโครงการ LineOA Sales Growth Strategy เพื่อเรียนรู้การประยุกต์ใช้...</p>
+                            <p class="act-card-desc">เข้าร่วมการอบรมโครงการ LineOA Sales Growth Strategy เพื่อเรียนรู้การประยุกต์ใช้ LINE Official Account (LINE OA)...</p>
+                            
+                            <!-- กล่องรูปภาพเพิ่มเติม -->
+                            <div class="act-extra-box">
+                                <span><i class="fa-solid fa-images"></i> รูปภาพเพิ่มเติม</span>
+                                <span style="color: var(--pink-accent);">+1 รูป</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 6. Jul 2024 -->
-                    <div class="act-card" onclick="openCertModal('images/13.jpeg')">
+                    <!-- Activity 6 -->
+                    <div class="act-card" onclick="openActivityModal(5)">
                         <div class="act-thumb">
                             <img src="images/13.jpeg" alt="โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS" onerror="this.src='https://via.placeholder.com/300x200?text=MBS+Freshy'">
-                            <span class="act-img-count"><i class="fa-solid fa-images"></i> 3</span>
                         </div>
                         <div class="act-card-body">
                             <span class="act-date-tag">Jul 2024</span>
                             <h4 class="act-card-title">โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS</h4>
-                            <p class="act-card-desc">เข้าร่วมโครงการ รับน้องสื่อฮัก สู่ฮั้ว MBS ในบทบาท Staff และพี่สันทนาการ...</p>
+                            <p class="act-card-desc">เข้าร่วมโครงการ รับน้องสื่อฮัก สู่ฮั้ว MBS ในบทบาท Staff และพี่สันทนาการของสาขาธุรกิจดิจิทัลและระบบสารสนเทศ...</p>
+                            
+                            <!-- กล่องรูปภาพเพิ่มเติม -->
+                            <div class="act-extra-box">
+                                <span><i class="fa-solid fa-images"></i> รูปภาพเพิ่มเติม</span>
+                                <span style="color: var(--pink-accent);">+2 รูป</span>
+                            </div>
                         </div>
                     </div>
 
@@ -831,79 +819,6 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 <button class="act-nav-btn act-next" onclick="slideActivity(1)" aria-label="Next">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             NEW SECTION: PHOTO GALLERY GRID (กล่องรูปภาพเพิ่มเติม)
-             ========================================================================== -->
-        <section id="photo-gallery">
-            <div class="section-header">
-                <span class="section-tag">Visual Collection</span>
-                <h2 class="section-title">Photo Gallery</h2>
-            </div>
-            <div class="photo-gallery-grid">
-                
-                <!-- Photo Item 1 -->
-                <div class="photo-card" onclick="openCertModal('images/gallery-1.jpg')">
-                    <div class="photo-card-img-wrapper">
-                        <img src="images/gallery-1.jpg" alt="Data Analytics Project Presentation" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Presentation'">
-                        <div class="photo-card-overlay">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="photo-card-info">
-                        <span class="photo-card-category">Presentation</span>
-                        <h4 class="photo-card-title">การนำเสนอโครงงานวิเคราะห์ข้อมูล</h4>
-                        <p class="photo-card-desc">บรรยากาศการนำเสนอผลงานวิเคราะห์ข้อมูลเชิงคาดการณ์ต่อคณาจารย์ประจำสาขา</p>
-                    </div>
-                </div>
-
-                <!-- Photo Item 2 -->
-                <div class="photo-card" onclick="openCertModal('images/gallery-2.jpg')">
-                    <div class="photo-card-img-wrapper">
-                        <img src="images/gallery-2.jpg" alt="Workshop & Collaboration" onerror="this.src='https://via.placeholder.com/400x300?text=Team+Workshop'">
-                        <div class="photo-card-overlay">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="photo-card-info">
-                        <span class="photo-card-category">Workshop</span>
-                        <h4 class="photo-card-title">การทำงานร่วมกันเป็นทีม (Team Collaboration)</h4>
-                        <p class="photo-card-desc">การร่วมมือกับทีมในการออกแบบ Dashboard และ Data Pipeline ในรายวิชาเรียน</p>
-                    </div>
-                </div>
-
-                <!-- Photo Item 3 -->
-                <div class="photo-card" onclick="openCertModal('images/gallery-3.jpg')">
-                    <div class="photo-card-img-wrapper">
-                        <img src="images/gallery-3.jpg" alt="Academic Seminar" onerror="this.src='https://via.placeholder.com/400x300?text=Academic+Event'">
-                        <div class="photo-card-overlay">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="photo-card-info">
-                        <span class="photo-card-category">Seminar</span>
-                        <h4 class="photo-card-title">งานสัมมนาเทคโนโลยีดิจิทัล</h4>
-                        <p class="photo-card-desc">ภาพบรรยากาศการเข้าร่วมฟังสัมมนาแลกเปลี่ยนความรู้ด้าน AI และ Big Data</p>
-                    </div>
-                </div>
-
-                <!-- Photo Item 4 -->
-                <div class="photo-card" onclick="openCertModal('images/gallery-4.jpg')">
-                    <div class="photo-card-img-wrapper">
-                        <img src="images/gallery-4.jpg" alt="Field Experience" onerror="this.src='https://via.placeholder.com/400x300?text=Field+Work'">
-                        <div class="photo-card-overlay">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="photo-card-info">
-                        <span class="photo-card-category">Operations</span>
-                        <h4 class="photo-card-title">การปฏิบัติงานหน้าร้านและตรวจสต็อก</h4>
-                        <p class="photo-card-desc">การลงพื้นที่เก็บข้อมูลคำสั่งซื้อและตรวจเช็กสินค้าคงคลังเพื่อนำมาทำ Data Analysis</p>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -935,8 +850,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 <h2 class="section-title">Certifications & Industry Training</h2>
             </div>
             <div class="cert-rows-container">
-                <!-- CERTIFICATE 1: Aug 2026 -->
-                <div class="cert-row" onclick="openCertModal('images/Cert9452297946_page-0001.jpg')" style="cursor: pointer;">
+                <!-- CERTIFICATE 1 -->
+                <div class="cert-row" onclick="openSingleModal('images/Cert9452297946_page-0001.jpg')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/Cert9452297946_page-0001.jpg" alt="ITS Certificate" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-certificate\'></i>';">
@@ -949,8 +864,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     <div class="cert-time">Aug 2026</div>
                 </div>
 
-                <!-- CERTIFICATE 2: Feb 2026 -->
-                <div class="cert-row" onclick="openCertModal('images/msu.png')" style="cursor: pointer;">
+                <!-- CERTIFICATE 2 -->
+                <div class="cert-row" onclick="openSingleModal('images/msu.png')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/msu.png" alt="MSU Certificate" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-award\'></i>';">
@@ -963,8 +878,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     <div class="cert-time">Feb 2026</div>
                 </div>
 
-                <!-- CERTIFICATE 3: Feb 2026 -->
-                <div class="cert-row" onclick="openCertModal('images/a_page-0001.jpg')" style="cursor: pointer;">
+                <!-- CERTIFICATE 3 -->
+                <div class="cert-row" onclick="openSingleModal('images/a_page-0001.jpg')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/a_page-0001.jpg" alt="Gemini Certified Educator" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-robot\'></i>';">
@@ -977,8 +892,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     <div class="cert-time">Feb 2026</div>
                 </div>
 
-                <!-- CERTIFICATE 4: Dec 2025 -->
-                <div class="cert-row" onclick="openCertModal('images/e_page-0001.jpg')" style="cursor: pointer;">
+                <!-- CERTIFICATE 4 -->
+                <div class="cert-row" onclick="openSingleModal('images/e_page-0001.jpg')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/e_page-0001.jpg" alt="Generative AI and ChatGPT for Research" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-robot\'></i>';">
@@ -991,8 +906,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     <div class="cert-time">Dec 2025</div>
                 </div>
 
-                <!-- CERTIFICATE 5: Aug 2025 -->
-                <div class="cert-row" onclick="openCertModal('images/b_page-0001.jpg')" style="cursor: pointer;">
+                <!-- CERTIFICATE 5 -->
+                <div class="cert-row" onclick="openSingleModal('images/b_page-0001.jpg')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/b_page-0001.jpg" alt="Microsoft Power BI Training Certificate" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-chart-pie\'></i>';">
@@ -1005,8 +920,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     <div class="cert-time">Aug 2025</div>
                 </div>
 
-                <!-- CERTIFICATE 6: Feb 2025 -->
-                <div class="cert-row" onclick="openCertModal('images/c_page-0001.jpg')" style="cursor: pointer;">
+                <!-- CERTIFICATE 6 -->
+                <div class="cert-row" onclick="openSingleModal('images/c_page-0001.jpg')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/c_page-0001.jpg" alt="IC3 Digital Literacy Certification" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-laptop-code\'></i>';">
@@ -1019,8 +934,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     <div class="cert-time">Feb 2025</div>
                 </div>
 
-                <!-- CERTIFICATE 7: Dec 2024 -->
-                <div class="cert-row" onclick="openCertModal('images/d_page-0001.jpg')" style="cursor: pointer;">
+                <!-- CERTIFICATE 7 -->
+                <div class="cert-row" onclick="openSingleModal('images/d_page-0001.jpg')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/d_page-0001.jpg" alt="LINE Official Account Strategy" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-comments\'></i>';">
@@ -1033,8 +948,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     <div class="cert-time">Dec 2024</div>
                 </div>
 
-                <!-- CERTIFICATE 8: Dec 2024 -->
-                <div class="cert-row" onclick="openCertModal('images/f.jpg')" style="cursor: pointer;">
+                <!-- CERTIFICATE 8 -->
+                <div class="cert-row" onclick="openSingleModal('images/f.jpg')">
                     <div class="cert-left">
                         <div class="cert-thumb-box">
                             <img src="images/f.jpg" alt="MBS Open House Seasons 2024 Support" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-users-gear\'></i>';">
@@ -1049,6 +964,38 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
             </div>
         </section>
 
+    </div>
+
+    <!-- SINGLE IMAGE MODAL -->
+    <div id="singleModal" class="modal" onclick="closeSingleModal()">
+        <span class="close-btn" onclick="closeSingleModal()">&times;</span>
+        <img id="singleModalImg" class="modal-content" src="" alt="Preview" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- ACTIVITY DETAIL & MULTI-IMAGE POPUP MODAL -->
+    <div id="actDetailModal" class="modal" onclick="closeActivityModal()">
+        <div class="act-modal-container" onclick="event.stopPropagation()">
+            <span class="act-close-btn" onclick="closeActivityModal()">&times;</span>
+            <div class="act-modal-header">
+                <h3 class="act-modal-title" id="actModalTitle">Activity Title</h3>
+                <div class="act-modal-date" id="actModalDate">Date</div>
+            </div>
+            
+            <!-- รูปภาพหลักใน Pop-up -->
+            <div class="act-modal-hero-img">
+                <img id="actModalHero" src="" alt="Activity Main Focus">
+            </div>
+
+            <!-- กล่องรายการรูปภาพทั้งหมดสำหรับกดเปลี่ยนรูป -->
+            <div class="act-modal-thumbs-label">
+                <i class="fa-solid fa-images" style="color: var(--pink-accent);"></i> รูปภาพทั้งหมดในกิจกรรมนี้:
+            </div>
+            <div class="act-modal-thumbs" id="actModalThumbs">
+                <!-- Javascript จะนำรูปภาพมาใส่อัตโนมัติ -->
+            </div>
+
+            <p class="act-modal-desc" id="actModalDesc" style="margin-top: 1.2rem;">Activity description...</p>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -1067,28 +1014,104 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
 
     <!-- JAVASCRIPT FOR INTERACTION -->
     <script>
-        function openCertModal(imgSrc) {
-            const modal = document.getElementById('resumeModal');
-            const modalImg = document.getElementById('modalImg');
-            modalImg.src = imgSrc;
-            modal.style.display = 'flex';
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
-        }
+        // ข้อมูลกิจกรรมทั้งหมดที่ตรงกับไฟล์รูปภาพของคุณ
+        const activitiesData = [
+            {
+                title: "สัมมนาวิชาการ EduTech for Thailand's Future",
+                date: "Oct 2025",
+                desc: "เข้าร่วมงานสัมมนาเชิงวิชาการ “EduTech for Thailand’s Future: Empowering Smart Learning with Cybersecurity & AI ครั้งที่ 1” จัดโดยศูนย์เทคโนโลยีดิจิทัลและปัญญาประดิษฐ์ คณะการบัญชีและการจัดการ และสำนักคอมพิวเตอร์ มหาวิทยาลัยมหาสารคาม ร่วมกับบริษัท เดอะแพรคทิเคิลโซลูชั่น จำกัด (มหาชน) (TPS)\n\nภายในงานได้เรียนรู้แนวทางการนำ AI และ Cybersecurity มาประยุกต์ใช้เพื่อพัฒนาการเรียนรู้ การศึกษา และการดำเนินธุรกิจให้มีประสิทธิภาพและปลอดภัยมากยิ่งขึ้น รวมถึงได้เปิดมุมมองเกี่ยวกับบทบาทของเทคโนโลยีดิจิทัลต่ออนาคตขององค์กรและการทำงาน",
+                images: ["images/1.jpeg", "images/2.jpeg"]
+            },
+            {
+                title: "MBS Fresh Day & Fresh Night 2025",
+                date: "Jul 2025",
+                desc: "เข้าร่วมโครงการ MBS Freshy Day Freshy 2025 ในบทบาท Staff รับผิดชอบช่วยดำเนินงานและจัดเตรียมกิจกรรม รวมถึงดูแลและอำนวยความสะดวกให้แก่ผู้เข้าร่วมการแข่งขัน เพื่อให้กิจกรรมดำเนินไปอย่างราบรื่นและเป็นไปตามกำหนดการ",
+                images: ["images/3.jpeg", "images/4.jpeg"]
+            },
+            {
+                title: "MBS สำเภาฟ้าเกมส์ 2024",
+                date: "Feb 2025",
+                desc: "เข้าร่วมโครงการ MBS สำเภาฟ้าเกม 2024 ในบทบาท Staff โดยรับผิดชอบดูแลและประสานงานบริเวณแสตนด์ รวมถึงดูแลและสร้างความพร้อมให้น้อง ๆ ในการร้องเพลงและเชียร์ระหว่างกิจกรรม นอกจากนี้ยังรับผิดชอบการเลื่อนฉากและสนับสนุนการแสดงของทีม เพื่อให้การแสดงดำเนินไปอย่างราบรื่นและเป็นไปตามกำหนดการ",
+                images: ["images/5.jpeg", "images/6.jpeg", "images/12.jpeg"]
+            },
+            {
+                title: "MSU OpenHouse 2024",
+                date: "Dec 2024",
+                desc: "เข้าร่วมโครงการ MSU Open House 2024 ในบทบาทผู้แนะนำและให้ข้อมูลเกี่ยวกับ สาขาธุรกิจดิจิทัลและระบบสารสนเทศ แก่นักเรียนและผู้ที่สนใจ โดยให้ข้อมูลเกี่ยวกับหลักสูตร รายวิชา และแนวทางการเรียนในสาขา พร้อมทั้งตอบคำถามและให้คำแนะนำแก่ผู้เข้าร่วมงาน",
+                images: ["images/7.jpeg", "images/8.jpeg", "images/9.jpeg"]
+            },
+            {
+                title: "LineOA Sales Growth Strategy",
+                date: "Dec 2024",
+                desc: "เข้าร่วมการอบรมโครงการ LineOA Sales Growth Strategy เพื่อเรียนรู้การประยุกต์ใช้ LINE Official Account (LINE OA) สำหรับการทำธุรกิจและการสื่อสารกับลูกค้า โดยศึกษาแนวทางการใช้เครื่องมือต่าง ๆ ของ LINE OA เพื่อสนับสนุนการขาย การประชาสัมพันธ์ และสร้างความสัมพันธ์กับลูกค้า",
+                images: ["images/10.jpg", "images/11.jpeg"]
+            },
+            {
+                title: "โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS",
+                date: "Jul 2024",
+                desc: "เข้าร่วมโครงการ รับน้องสื่อฮัก สู่ฮั้ว MBS ในบทบาท Staff และพี่สันทนาการของสาขาธุรกิจดิจิทัลและระบบสารสนเทศ รับผิดชอบดูแลน้อง ๆ และสร้างบรรยากาศภายในกิจกรรม โดยเป็นผู้นำกิจกรรมสันทนาการ พาน้อง ๆ เล่นเกม และมีส่วนร่วมในการสร้างความสัมพันธ์ระหว่างรุ่นพี่และรุ่นน้อง",
+                images: ["images/13.jpeg", "images/14.jpeg", "images/15.jpeg"]
+            }
+        ];
 
-        function closeModal() {
-            const modal = document.getElementById('resumeModal');
-            modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-        }
-
+        // ฟังก์ชัน Slider การ์ดสไลด์ข้างๆ
         function slideActivity(direction) {
             const track = document.getElementById('actSliderTrack');
-            const scrollAmount = 300;
+            const scrollAmount = 320;
             track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        // ฟังก์ชัน Pop-up ดูภาพเดี่ยว (Resume / Certificate)
+        function openSingleModal(imgSrc) {
+            const modal = document.getElementById('singleModal');
+            const modalImg = document.getElementById('singleModalImg');
+            modalImg.src = imgSrc;
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('show'); }, 10);
+        }
+
+        function closeSingleModal() {
+            const modal = document.getElementById('singleModal');
+            modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        // ฟังก์ชัน Pop-up ดูกิจกรรมแบบละเอียด พร้อมเลือกดูรูปภาพเพิ่มเติม
+        function openActivityModal(index) {
+            const data = activitiesData[index];
+            document.getElementById('actModalTitle').innerText = data.title;
+            document.getElementById('actModalDate').innerText = data.date;
+            document.getElementById('actModalDesc').innerText = data.desc;
+            
+            // ตั้งค่ารูปหลัก
+            const heroImg = document.getElementById('actModalHero');
+            heroImg.src = data.images[0];
+
+            // สร้างรูป Thumbnails
+            const thumbsContainer = document.getElementById('actModalThumbs');
+            thumbsContainer.innerHTML = '';
+
+            data.images.forEach((imgSrc, idx) => {
+                const thumb = document.createElement('div');
+                thumb.className = `act-modal-thumb-item ${idx === 0 ? 'active' : ''}`;
+                thumb.innerHTML = `<img src="${imgSrc}" alt="thumb">`;
+                thumb.onclick = function() {
+                    heroImg.src = imgSrc;
+                    document.querySelectorAll('.act-modal-thumb-item').forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                };
+                thumbsContainer.appendChild(thumb);
+            });
+
+            const modal = document.getElementById('actDetailModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('show'); }, 10);
+        }
+
+        function closeActivityModal() {
+            const modal = document.getElementById('actDetailModal');
+            modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
         }
     </script>
 </body>
