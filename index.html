@@ -614,7 +614,6 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 </div>
             </div>
         </section>
-
 <!-- FEATURED PROJECTS -->
 <section id="projects">
     <div class="section-header">
@@ -648,8 +647,8 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 </div>
 
                 <div class="project-right-pane" style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                    <!-- กล่องเล็ก 1: รายงาน (แก้ไขชื่อไฟล์เต็มตรงกับ GitHub) -->
-                    <a href="javascript:void(0)" onclick="openModal('images/การพยากรณ์การใช้ไฟฟ้าในประเทศไทยด้วยเทคนิคการเรียนรู้ของเครื่อง_compressed.pdf')" class="project-doc-box" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-decoration: none; color: inherit; transition: all 0.3s ease;">
+                    <!-- กล่องเล็ก 1: รายงาน (เปลี่ยนชื่อไฟล์เป็นภาษาอังกฤษเพื่อแก้ปัญหาระดับ Root Cause) -->
+                    <a href="javascript:void(0)" onclick="openModal('images/electricity_report.pdf')" class="project-doc-box" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-decoration: none; color: inherit; transition: all 0.3s ease;">
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <i class="fa-solid fa-file-pdf" style="color: #ef4444; font-size: 1.2rem;"></i>
                             <span style="font-weight: 500;">รายงาน</span>
@@ -657,7 +656,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                         <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; opacity: 0.6;"></i>
                     </a>
 
-                    <!-- กล่องเล็ก 2: Presentation Slide (DA_compressed.pdf) -->
+                    <!-- กล่องเล็ก 2: Presentation Slide -->
                     <a href="javascript:void(0)" onclick="openModal('images/DA_compressed.pdf')" class="project-doc-box" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-decoration: none; color: inherit; transition: all 0.3s ease;">
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <i class="fa-solid fa-file-powerpoint" style="color: #f97316; font-size: 1.2rem;"></i>
@@ -799,62 +798,6 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
 
 <script>
 function openModal(pdfUrl) {
-    // ใช้ encodeURI ช่วยจัดรูปแบบ URL ภาษาไทยให้ถูกต้องก่อนใส่ลง iframe
-    document.getElementById('pdfViewer').src = encodeURI(pdfUrl);
-    document.getElementById('pdfModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('pdfModal').style.display = 'none';
-    document.getElementById('pdfViewer').src = '';
-}
-
-window.onclick = function(event) {
-    var modal = document.getElementById('pdfModal');
-    if (event.target == modal) {
-        closeModal();
-    }
-}
-</script>
-
-<!-- PDF Modal Popup (วางไว้ล่างสุดก่อนปิด </body>) -->
-<div id="pdfModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
-    <div style="position: relative; background-color: #1a1a1a; margin: 2% auto; padding: 20px; width: 85%; height: 90%; border-radius: 12px; display: flex; flex-direction: column;">
-        <span onclick="closeModal()" style="position: absolute; right: 20px; top: 10px; color: #fff; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
-        <iframe id="pdfViewer" src="" style="width: 100%; height: 100%; border: none; border-radius: 8px; margin-top: 25px;"></iframe>
-    </div>
-</div>
-
-<script>
-function openModal(pdfUrl) {
-    document.getElementById('pdfViewer').src = encodeURI(pdfUrl);
-    document.getElementById('pdfModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('pdfModal').style.display = 'none';
-    document.getElementById('pdfViewer').src = '';
-}
-
-window.onclick = function(event) {
-    var modal = document.getElementById('pdfModal');
-    if (event.target == modal) {
-        closeModal();
-    }
-}
-</script>
-
-<!-- PDF Modal Popup (วางไว้ล่างสุดก่อนปิด </body>) -->
-<div id="pdfModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
-    <div style="position: relative; background-color: #1a1a1a; margin: 2% auto; padding: 20px; width: 85%; height: 90%; border-radius: 12px; display: flex; flex-direction: column;">
-        <span onclick="closeModal()" style="position: absolute; right: 20px; top: 10px; color: #fff; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
-        <iframe id="pdfViewer" src="" style="width: 100%; height: 100%; border: none; border-radius: 8px; margin-top: 25px;"></iframe>
-    </div>
-</div>
-
-<script>
-function openModal(pdfUrl) {
-    // ใช้ encodeURI() ป้องกันปัญหาข้อผิดพลาด 404 สำหรับไฟล์ชื่อภาษาไทยหรือมีเว้นวรรคบน GitHub Pages
     document.getElementById('pdfViewer').src = encodeURI(pdfUrl);
     document.getElementById('pdfModal').style.display = 'block';
 }
