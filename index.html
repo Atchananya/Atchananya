@@ -558,127 +558,130 @@
             </div>
         </section>
 
-       <!-- PHOTO GALLERY / ACTIVITIES SECTION -->
+      <!-- ACTIVITIES / PHOTO GALLERY SECTION -->
 <section id="gallery" style="margin-bottom: 3rem;">
     <div class="section-header">
         <span class="section-tag">Visual Artifacts</span>
         <h2 class="section-title">Activities</h2>
     </div>
 
-    <!-- Carousel Track Container -->
-    <div class="activity-slider-wrapper">
-        <button class="slider-btn prev-btn" onclick="slideActivity(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-        
-        <div class="activity-slider-track" id="activityTrack">
+    <!-- Activity Slider Wrapper -->
+    <div class="act-slider-wrapper">
+        <button class="act-nav-btn act-prev" onclick="slideActivity(-1)" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="act-slider-track" id="actSliderTrack">
             
-            <!-- Activity 1: Oct 2025 -->
-            <div class="activity-card" onclick="openActivityModal('EduTech for Thailand\'s Future', 'Oct 2025', 'เข้าร่วมงานสัมมนาเชิงวิชาการ “EduTech for Thailand’s Future: Empowering Smart Learning with Cybersecurity & AI ครั้งที่ 1” จัดโดยศูนย์เทคโนโลยีดิจิทัลและปัญญาประดิษฐ์ คณะการบัญชีและการจัดการ และสำนักคอมพิวเตอร์ มหาวิทยาลัยมหาสารคาม ร่วมกับบริษัท เดอะแพรคทิเคิลโซลูชั่น จำกัด (มหาชน) (TPS)<br><br>ภายในงานได้เรียนรู้แนวทางการนำ AI และ Cybersecurity มาประยุกต์ใช้เพื่อพัฒนาการเรียนรู้ การศึกษา และการดำเนินธุรกิจให้มีประสิทธิภาพและปลอดภัยมากยิ่งขึ้น รวมถึงได้เปิดมุมมองเกี่ยวกับบทบาทของเทคโนโลยีดิจิทัลต่ออนาคตขององค์กรและการทำงาน', ['images/1.jpeg', 'images/2.jpeg'])">
-                <div class="activity-thumb">
-                    <img src="images/1.jpeg" alt="EduTech for Thailand's Future">
-                    <span class="img-count-tag"><i class="fa-solid fa-images"></i> 2</span>
+            <!-- 1. Oct 2025 -->
+            <div class="act-card" onclick="openActivityModal('สัมมนาวิชาการ EduTech for Thailand\'s Future', 'Oct 2025', 'เข้าร่วมงานสัมมนาเชิงวิชาการ “EduTech for Thailand’s Future: Empowering Smart Learning with Cybersecurity & AI ครั้งที่ 1” จัดโดยศูนย์เทคโนโลยีดิจิทัลและปัญญาประดิษฐ์ คณะการบัญชีและการจัดการ และสำนักคอมพิวเตอร์ มหาวิทยาลัยมหาสารคาม ร่วมกับบริษัท เดอะแพรคทิเคิลโซลูชั่น จำกัด (มหาชน) (TPS)<br><br>ภายในงานได้เรียนรู้แนวทางการนำ AI และ Cybersecurity มาประยุกต์ใช้เพื่อพัฒนาการเรียนรู้ การศึกษา และการดำเนินธุรกิจให้มีประสิทธิภาพและปลอดภัยมากยิ่งขึ้น รวมถึงได้เปิดมุมมองเกี่ยวกับบทบาทของเทคโนโลยีดิจิทัลต่ออนาคตขององค์กรและการทำงาน', ['images/1.jpeg', 'images/2.jpeg'])">
+                <div class="act-thumb">
+                    <img src="images/1.jpeg" alt="EduTech for Thailand's Future" onerror="this.src='https://via.placeholder.com/300x200?text=EduTech'">
+                    <span class="act-img-count"><i class="fa-solid fa-images"></i> 2</span>
                 </div>
-                <div class="activity-info">
-                    <span class="activity-date">Oct 2025</span>
-                    <h4>สัมมนาวิชาการ EduTech for Thailand's Future</h4>
-                    <p>เข้าร่วมงานสัมมนาเชิงวิชาการ “EduTech for Thailand’s Future...”</p>
-                </div>
-            </div>
-
-            <!-- Activity 2: Jul 2025 -->
-            <div class="activity-card" onclick="openActivityModal('MBS Fresh Day & Fresh Night 2025', 'Jul 2025', 'เข้าร่วมโครงการ MBS Freshy Day Freshy 2025 ในบทบาท Staff รับผิดชอบช่วยดำเนินงานและจัดเตรียมกิจกรรม รวมถึงดูแลและอำนวยความสะดวกให้แก่ผู้เข้าร่วมการแข่งขัน เพื่อให้กิจกรรมดำเนินไปอย่างราบรื่นและเป็นไปตามกำหนดการ', ['images/3.jpeg', 'images/4.jpeg'])">
-                <div class="activity-thumb">
-                    <img src="images/3.jpeg" alt="MBS Fresh Day & Fresh Night 2025">
-                    <span class="img-count-tag"><i class="fa-solid fa-images"></i> 2</span>
-                </div>
-                <div class="activity-info">
-                    <span class="activity-date">Jul 2025</span>
-                    <h4>MBS Fresh Day & Fresh Night 2025</h4>
-                    <p>เข้าร่วมโครงการ MBS Freshy Day Freshy 2025 ในบทบาท Staff...</p>
+                <div class="act-card-body">
+                    <span class="act-date-tag">Oct 2025</span>
+                    <h4 class="act-card-title">สัมมนาวิชาการ EduTech for Thailand's Future</h4>
+                    <p class="act-card-desc">เข้าร่วมงานสัมมนาเชิงวิชาการ “EduTech for Thailand’s Future: Empowering Smart Learning...”</p>
                 </div>
             </div>
 
-            <!-- Activity 3: Feb 2025 -->
-            <div class="activity-card" onclick="openActivityModal('MBS สำเภาฟ้าเกมส์ 2024', 'Feb 2025', 'เข้าร่วมโครงการ MBS สำเภาฟ้าเกม 2024 ในบทบาท Staff โดยรับผิดชอบดูแลและประสานงานบริเวณแสตนด์ รวมถึงดูแลและสร้างความพร้อมให้น้อง ๆ ในการร้องเพลงและเชียร์ระหว่างกิจกรรม นอกจากนี้ยังรับผิดชอบการเลื่อนฉากและสนับสนุนการแสดงของทีม เพื่อให้การแสดงดำเนินไปอย่างราบรื่นและเป็นไปตามกำหนดการ', ['images/5.jpeg', 'images/6.jpeg', 'images/12.jpeg'])">
-                <div class="activity-thumb">
-                    <img src="images/5.jpeg" alt="MBS สำเภาฟ้าเกมส์ 2024">
-                    <span class="img-count-tag"><i class="fa-solid fa-images"></i> 3</span>
+            <!-- 2. Jul 2025 -->
+            <div class="act-card" onclick="openActivityModal('MBS Fresh Day & Fresh Night 2025', 'Jul 2025', 'เข้าร่วมโครงการ MBS Freshy Day Freshy 2025 ในบทบาท Staff รับผิดชอบช่วยดำเนินงานและจัดเตรียมกิจกรรม รวมถึงดูแลและอำนวยความสะดวกให้แก่ผู้เข้าร่วมการแข่งขัน เพื่อให้กิจกรรมดำเนินไปอย่างราบรื่นและเป็นไปตามกำหนดการ', ['images/3.jpeg', 'images/4.jpeg'])">
+                <div class="act-thumb">
+                    <img src="images/3.jpeg" alt="MBS Fresh Day & Fresh Night 2025" onerror="this.src='https://via.placeholder.com/300x200?text=MBS+Freshy'">
+                    <span class="act-img-count"><i class="fa-solid fa-images"></i> 2</span>
                 </div>
-                <div class="activity-info">
-                    <span class="activity-date">Feb 2025</span>
-                    <h4>MBS สำเภาฟ้าเกมส์ 2024</h4>
-                    <p>เข้าร่วมโครงการ MBS สำเภาฟ้าเกม 2024 ในบทบาท Staff...</p>
-                </div>
-            </div>
-
-            <!-- Activity 4: Dec 2024 -->
-            <div class="activity-card" onclick="openActivityModal('MSU OpenHouse 2024', 'Dec 2024', 'เข้าร่วมโครงการ MSU Open House 2024 ในบทบาทผู้แนะนำและให้ข้อมูลเกี่ยวกับ สาขาธุรกิจดิจิทัลและระบบสารสนเทศ แก่นักเรียนและผู้ที่สนใจ โดยให้ข้อมูลเกี่ยวกับหลักสูตร รายวิชา และแนวทางการเรียนในสาขา พร้อมทั้งตอบคำถามและให้คำแนะนำแก่ผู้เข้าร่วมงาน', ['images/7.jpeg', 'images/8.jpeg', 'images/9.jpeg'])">
-                <div class="activity-thumb">
-                    <img src="images/7.jpeg" alt="MSU OpenHouse 2024">
-                    <span class="img-count-tag"><i class="fa-solid fa-images"></i> 3</span>
-                </div>
-                <div class="activity-info">
-                    <span class="activity-date">Dec 2024</span>
-                    <h4>MSU OpenHouse 2024</h4>
-                    <p>เข้าร่วมโครงการ MSU Open House 2024 ในบทบาทผู้แนะนำและให้ข้อมูล...</p>
+                <div class="act-card-body">
+                    <span class="act-date-tag">Jul 2025</span>
+                    <h4 class="act-card-title">MBS Fresh Day & Fresh Night 2025</h4>
+                    <p class="act-card-desc">เข้าร่วมโครงการ MBS Freshy Day Freshy 2025 ในบทบาท Staff รับผิดชอบช่วยดำเนินงาน...</p>
                 </div>
             </div>
 
-            <!-- Activity 5: Dec 2024 -->
-            <div class="activity-card" onclick="openActivityModal('LineOA Sales Growth Strategy', 'Dec 2024', 'เข้าร่วมการอบรมโครงการ LineOA Sales Growth Strategy เพื่อเรียนรู้การประยุกต์ใช้ LINE Official Account (LINE OA) สำหรับการทำธุรกิจและการสื่อสารกับลูกค้า โดยศึกษาแนวทางการใช้เครื่องมือต่าง ๆ ของ LINE OA เพื่อสนับสนุนการขาย การประชาสัมพันธ์ และสร้างความสัมพันธ์กับลูกค้า', ['images/10.jpg', 'images/11.jpeg'])">
-                <div class="activity-thumb">
-                    <img src="images/10.jpg" alt="LineOA Sales Growth Strategy">
-                    <span class="img-count-tag"><i class="fa-solid fa-images"></i> 2</span>
+            <!-- 3. Feb 2025 -->
+            <div class="act-card" onclick="openActivityModal('MBS สำเภาฟ้าเกมส์ 2024', 'Feb 2025', 'เข้าร่วมโครงการ MBS สำเภาฟ้าเกม 2024 ในบทบาท Staff โดยรับผิดชอบดูแลและประสานงานบริเวณแสตนด์ รวมถึงดูแลและสร้างความพร้อมให้น้อง ๆ ในการร้องเพลงและเชียร์ระหว่างกิจกรรม นอกจากนี้ยังรับผิดชอบการเลื่อนฉากและสนับสนุนการแสดงของทีม เพื่อให้การแสดงดำเนินไปอย่างราบรื่นและเป็นไปตามกำหนดการ', ['images/5.jpeg', 'images/6.jpeg', 'images/12.jpeg'])">
+                <div class="act-thumb">
+                    <img src="images/5.jpeg" alt="MBS สำเภาฟ้าเกมส์ 2024" onerror="this.src='https://via.placeholder.com/300x200?text=MBS+Games'">
+                    <span class="act-img-count"><i class="fa-solid fa-images"></i> 3</span>
                 </div>
-                <div class="activity-info">
-                    <span class="activity-date">Dec 2024</span>
-                    <h4>LineOA Sales Growth Strategy</h4>
-                    <p>เข้าร่วมการอบรมโครงการ LineOA Sales Growth Strategy...</p>
+                <div class="act-card-body">
+                    <span class="act-date-tag">Feb 2025</span>
+                    <h4 class="act-card-title">MBS สำเภาฟ้าเกมส์ 2024</h4>
+                    <p class="act-card-desc">เข้าร่วมโครงการ MBS สำเภาฟ้าเกม 2024 ในบทบาท Staff โดยรับผิดชอบดูแลและประสานงาน...</p>
                 </div>
             </div>
 
-            <!-- Activity 6: Jul 2024 -->
-            <div class="activity-card" onclick="openActivityModal('โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS', 'Jul 2024', 'เข้าร่วมโครงการ รับน้องสื่อฮัก สู่ฮั้ว MBS ในบทบาท Staff และพี่สันทนาการของสาขาธุรกิจดิจิทัลและระบบสารสนเทศ รับผิดชอบดูแลน้อง ๆ และสร้างบรรยากาศภายในกิจกรรม โดยเป็นผู้นำกิจกรรมสันทนาการ พาน้อง ๆ เล่นเกม และมีส่วนร่วมในการสร้างความสัมพันธ์ระหว่างรุ่นพี่และรุ่นน้อง', ['images/13.jpeg', 'images/14.jpeg', 'images/15.jpeg'])">
-                <div class="activity-thumb">
-                    <img src="images/13.jpeg" alt="โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS">
-                    <span class="img-count-tag"><i class="fa-solid fa-images"></i> 3</span>
+            <!-- 4. Dec 2024 -->
+            <div class="act-card" onclick="openActivityModal('MSU OpenHouse 2024', 'Dec 2024', 'เข้าร่วมโครงการ MSU Open House 2024 ในบทบาทผู้แนะนำและให้ข้อมูลเกี่ยวกับ สาขาธุรกิจดิจิทัลและระบบสารสนเทศ แก่นักเรียนและผู้ที่สนใจ โดยให้ข้อมูลเกี่ยวกับหลักสูตร รายวิชา และแนวทางการเรียนในสาขา พร้อมทั้งตอบคำถามและให้คำแนะนำแก่ผู้เข้าร่วมงาน', ['images/7.jpeg', 'images/8.jpeg', 'images/9.jpeg'])">
+                <div class="act-thumb">
+                    <img src="images/7.jpeg" alt="MSU OpenHouse 2024" onerror="this.src='https://via.placeholder.com/300x200?text=MSU+OpenHouse'">
+                    <span class="act-img-count"><i class="fa-solid fa-images"></i> 3</span>
                 </div>
-                <div class="activity-info">
-                    <span class="activity-date">Jul 2024</span>
-                    <h4>โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS</h4>
-                    <p>เข้าร่วมโครงการ รับน้องสื่อฮัก สู่ฮั้ว MBS ในบทบาท Staff และพี่สันทนาการ...</p>
+                <div class="act-card-body">
+                    <span class="act-date-tag">Dec 2024</span>
+                    <h4 class="act-card-title">MSU OpenHouse 2024</h4>
+                    <p class="act-card-desc">เข้าร่วมโครงการ MSU Open House 2024 ในบทบาทผู้แนะนำและให้ข้อมูลเกี่ยวกับสาขา...</p>
+                </div>
+            </div>
+
+            <!-- 5. Dec 2024 -->
+            <div class="act-card" onclick="openActivityModal('LineOA Sales Growth Strategy', 'Dec 2024', 'เข้าร่วมการอบรมโครงการ LineOA Sales Growth Strategy เพื่อเรียนรู้การประยุกต์ใช้ LINE Official Account (LINE OA) สำหรับการทำธุรกิจและการสื่อสารกับลูกค้า โดยศึกษาแนวทางการใช้เครื่องมือต่าง ๆ ของ LINE OA เพื่อสนับสนุนการขาย การประชาสัมพันธ์ และสร้างความสัมพันธ์กับลูกค้า', ['images/10.jpg', 'images/11.jpeg'])">
+                <div class="act-thumb">
+                    <img src="images/10.jpg" alt="LineOA Sales Growth Strategy" onerror="this.src='https://via.placeholder.com/300x200?text=LineOA+Strategy'">
+                    <span class="act-img-count"><i class="fa-solid fa-images"></i> 2</span>
+                </div>
+                <div class="act-card-body">
+                    <span class="act-date-tag">Dec 2024</span>
+                    <h4 class="act-card-title">LineOA Sales Growth Strategy</h4>
+                    <p class="act-card-desc">เข้าร่วมการอบรมโครงการ LineOA Sales Growth Strategy เพื่อเรียนรู้การประยุกต์ใช้...</p>
+                </div>
+            </div>
+
+            <!-- 6. Jul 2024 -->
+            <div class="act-card" onclick="openActivityModal('โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS', 'Jul 2024', 'เข้าร่วมโครงการ รับน้องสื่อฮัก สู่ฮั้ว MBS ในบทบาท Staff และพี่สันทนาการของสาขาธุรกิจดิจิทัลและระบบสารสนเทศ รับผิดชอบดูแลน้อง ๆ และสร้างบรรยากาศภายในกิจกรรม โดยเป็นผู้นำกิจกรรมสันทนาการ พาน้อง ๆ เล่นเกม และมีส่วนร่วมในการสร้างความสัมพันธ์ระหว่างรุ่นพี่และรุ่นน้อง', ['images/13.jpeg', 'images/14.jpeg', 'images/15.jpeg'])">
+                <div class="act-thumb">
+                    <img src="images/13.jpeg" alt="โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS" onerror="this.src='https://via.placeholder.com/300x200?text=MBS+Freshy'">
+                    <span class="act-img-count"><i class="fa-solid fa-images"></i> 3</span>
+                </div>
+                <div class="act-card-body">
+                    <span class="act-date-tag">Jul 2024</span>
+                    <h4 class="act-card-title">โครงการรับน้องสื่อฮัก สู่ฮั้ว MBS</h4>
+                    <p class="act-card-desc">เข้าร่วมโครงการ รับน้องสื่อฮัก สู่ฮั้ว MBS ในบทบาท Staff และพี่สันทนาการ...</p>
                 </div>
             </div>
 
         </div>
 
-        <button class="slider-btn next-btn" onclick="slideActivity(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="act-nav-btn act-next" onclick="slideActivity(1)" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
     </div>
 </section>
 
 <!-- ACTIVITY POPUP MODAL -->
-<div id="activityModal" class="activity-modal">
-    <div class="activity-modal-content">
-        <span class="close-act-modal" onclick="closeActivityModal()">&times;</span>
-        
-        <div class="act-modal-body">
-            <!-- Left: Main Image and Thumbnails -->
+<div id="activityModal" class="act-modal">
+    <div class="act-modal-content">
+        <button class="act-modal-close" onclick="closeActivityModal()">&times;</button>
+        <div class="act-modal-grid">
+            <!-- Left: Gallery -->
             <div class="act-modal-gallery">
-                <div class="main-img-box">
-                    <img id="actMainImg" src="" alt="Main Activity Image">
+                <div class="act-main-view">
+                    <img id="actModalMainImg" src="" alt="Main Image">
                 </div>
-                <div class="thumb-list" id="actThumbList"></div>
+                <div class="act-thumb-list" id="actModalThumbList">
+                    <!-- Thumbnails generated by JS -->
+                </div>
             </div>
-
-            <!-- Right: Details -->
-            <div class="act-modal-details">
-                <span class="act-badge" id="actModalDate"></span>
+            <!-- Right: Information -->
+            <div class="act-modal-info">
+                <span class="act-modal-badge" id="actModalDate"></span>
                 <h3 id="actModalTitle"></h3>
-                <p id="actModalDesc"></p>
+                <div class="act-modal-text" id="actModalDesc"></div>
             </div>
         </div>
     </div>
 </div>
-
         <!-- EDUCATION SECTION -->
         <section id="education">
             <div class="section-header">
