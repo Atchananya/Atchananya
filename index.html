@@ -208,6 +208,40 @@ section { padding: 4rem 0; }
     transform: translateY(-2px);
 }
 
+/* CONTACT SECTION */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.8rem;
+    border-radius: 14px;
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all 0.3s ease;
+}
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--purple-accent);
+}
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #F4E8EC;
+    color: var(--pink-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+.contact-info h4 { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+.contact-info p, .contact-info a { font-size: 1rem; font-weight: 600; color: var(--text-main); }
+.contact-info a:hover { color: var(--pink-accent); }
+
 /* ==========================================================================
    SLIDER COMMON STYLES (PROJECTS & ACTIVITIES)
    ========================================================================== */
@@ -504,6 +538,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 <li><a href="#activities">Activities</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -522,6 +557,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     </p>
                     <div class="hero-cta-group">
                         <button class="btn-primary" onclick="openSingleModal('images/Atchananya.CSV.png')"><i class="fa-solid fa-file-image"></i> View Resume</button>
+                        <!-- เปลี่ยนจาก Explore Projects เป็น Contact Me -->
                         <a href="#contact" class="btn-secondary">Contact Me</a>
                     </div>
                 </div>
@@ -1008,7 +1044,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
         </section>
 
         <!-- CERTIFICATIONS SECTION -->
-        <section id="certifications" style="margin-bottom: 3rem;">
+        <section id="certifications">
             <div class="section-header">
                 <span class="section-tag">Verified Credentials</span>
                 <h2 class="section-title">Certifications & Industry Training</h2>
@@ -1128,6 +1164,43 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
             </div>
         </section>
 
+        <!-- CONTACT SECTION (เพิ่มใหม่) -->
+        <section id="contact" style="margin-bottom: 3rem;">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>Address</h4>
+                        <p>KhamRiang Kantharawichai MahaSarakham 44150</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>Phone Number</h4>
+                        <p><a href="tel:+66981410093">(+66)981410093</a></p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p><a href="mailto:atchananyap@gmail.com">atchananyap@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <!-- SINGLE IMAGE MODAL -->
@@ -1165,7 +1238,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 © 2026 Atchananya Pitasaeng. All Rights Reserved.
             </div>
             <div class="footer-socials">
-                <a href="mailto:atchananya.pit@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:atchananyap@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
