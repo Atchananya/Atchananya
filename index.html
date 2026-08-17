@@ -208,40 +208,6 @@ section { padding: 4rem 0; }
     transform: translateY(-2px);
 }
 
-/* CONTACT SECTION */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.contact-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 1.8rem;
-    border-radius: 14px;
-    box-shadow: var(--shadow-subtle);
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    transition: all 0.3s ease;
-}
-.contact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--purple-accent);
-}
-.contact-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    background: #F4E8EC;
-    color: var(--pink-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-}
-.contact-info h4 { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
-.contact-info p, .contact-info a { font-size: 1rem; font-weight: 600; color: var(--text-main); }
-.contact-info a:hover { color: var(--pink-accent); }
-
 /* ==========================================================================
    SLIDER COMMON STYLES (PROJECTS & ACTIVITIES)
    ========================================================================== */
@@ -380,6 +346,36 @@ section { padding: 4rem 0; }
 .cert-left h4 { font-size: 0.98rem; font-weight: 600; color: var(--text-main); }
 .cert-left p { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.1rem; }
 .cert-time { font-size: 0.82rem; color: var(--purple-accent); font-weight: 600; white-space: nowrap; }
+
+/* CONTACT SECTION STYLES */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
+}
+.contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--purple-accent); }
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #F4E8EC;
+    color: var(--pink-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+.contact-info h4 { font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 0.2rem; }
+.contact-info p { font-size: 0.92rem; color: var(--text-main); font-weight: 600; word-break: break-word; }
+.contact-info a:hover { color: var(--pink-accent); text-decoration: underline; }
 
 /* ==========================================================================
    MODAL POPUP STYLES (SINGLE IMAGE & DETAILED ACTIVITY)
@@ -557,7 +553,6 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                     </p>
                     <div class="hero-cta-group">
                         <button class="btn-primary" onclick="openSingleModal('images/Atchananya.CSV.png')"><i class="fa-solid fa-file-image"></i> View Resume</button>
-                        <!-- เปลี่ยนจาก Explore Projects เป็น Contact Me -->
                         <a href="#contact" class="btn-secondary">Contact Me</a>
                     </div>
                 </div>
@@ -899,7 +894,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
         </div>
 
         <!-- ACTIVITIES SLIDER SECTION -->
-        <section id="activities" style="margin-bottom: 3rem;">
+        <section id="activities">
             <div class="section-header">
                 <span class="section-tag">Engagement & Growth</span>
                 <h2 class="section-title">Activities</h2>
@@ -1164,7 +1159,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
             </div>
         </section>
 
-        <!-- CONTACT SECTION (เพิ่มใหม่) -->
+        <!-- CONTACT SECTION -->
         <section id="contact" style="margin-bottom: 3rem;">
             <div class="section-header">
                 <span class="section-tag">Get In Touch</span>
@@ -1238,7 +1233,7 @@ footer { background: #FAF9F6; border-top: 1px solid var(--border-color); padding
                 © 2026 Atchananya Pitasaeng. All Rights Reserved.
             </div>
             <div class="footer-socials">
-                <a href="mailto:atchananyap@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:atchananya.pit@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
